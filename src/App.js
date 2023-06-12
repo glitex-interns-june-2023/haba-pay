@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from '../assets/logo.jpg'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="app-title">
+        <h1>HabaPay</h1>
+      </div>
+      <div className="content">
+        <h2>Welcome back</h2>
+        <p>Sign in to proceed into your account</p>
+        <img className="logo" src="{logo}" alt="HabaPay logo" />
+        <button className="sign-in">Sign in</button>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
