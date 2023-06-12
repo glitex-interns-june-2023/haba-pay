@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import logo from '../assets/logo.jpg'
+import logo from './assets/logo.jpg';
 
 function App() {
   return (
@@ -10,11 +11,11 @@ function App() {
       <div className="content">
         <h2>Welcome back</h2>
         <p>Sign in to proceed into your account</p>
-        <img className="logo" src="{logo}" alt="HabaPay logo" />
+        <img className="logo" src={logo} alt="HabaPay logo" />
         <button className="sign-in">Sign in</button>
       </div>
     </div>
-  )
+  );
 }
 
 export default App;
