@@ -1,21 +1,17 @@
 import React from 'react';
-import './App.css';
-import logo from './assets/logo.jpg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignIn from './pages/SignIn';
+import Login from './pages/Login';
 
-function App() {
+const App = () => {
   return (
-    <div className="app-container">
-      <div className="app-title">
-        <h1>HabaPay</h1>
-      </div>
-      <div className="content">
-        <h2>Welcome back</h2>
-        <p>Sign in to proceed into your account</p>
-        <img className="logo" src={logo} alt="HabaPay logo" />
-        <button className="sign-in">Sign in</button>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

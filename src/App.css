@@ -39,7 +39,7 @@
     color: #323232;
 }
 
-.sign-in {
+.sign-in, .login {
     height: 43px;
     width: 240px;
     border-radius: 5px;
