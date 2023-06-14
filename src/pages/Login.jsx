@@ -18,10 +18,10 @@ function Login() {
 
   return (
       <div>
-        <div className="app-title">
+        <div className="title">
           <h1>HabaPay</h1>
         </div>
-        <div className="content">
+        <div className="login-content">
           <h2>Log in to account</h2>
           <form onSubmit={handleSubmit}>
             <label>
@@ -34,7 +34,7 @@ function Login() {
               <input type="password" value={password} onChange={handlePasswordChange} />
             </label>
             <br />
-            <button className="login" type="submit">Processing...</button>
+            <button className="login-btn" type="submit">Processing...</button>
           </form>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import '../App.css'
 
-const SignIn = () => {
+const Home = () => {
   const navigate = useNavigate();
 
   const handleSignInButtonClick = () => {
@@ -25,4 +25,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Home;
