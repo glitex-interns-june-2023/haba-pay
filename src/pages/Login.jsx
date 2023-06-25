@@ -25,7 +25,7 @@ function Login() {
       </div>
       <div className="login-content">
         <div className="login-title">
-          <h2>Log in to account</h2>
+          <h2>Log in to Account</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <label>
