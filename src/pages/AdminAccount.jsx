@@ -11,7 +11,7 @@ const AdminAccount = () => {
   const [loginPin, setLoginPin] = useState('');
 
   const handleCancel = () => {
-    
+    // Add cancel logic here
   };
 
   const handleVerify = () => {
@@ -29,6 +29,57 @@ const AdminAccount = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+          />
+
+          <label>Primary Number:</label>
+          <input
+            type="text"
+            value={primaryNumber}
+            onChange={(e) => setPrimaryNumber(e.target.value)}
+          />
+
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <div className="column">
+          <label>Secondary Number:</label>
+          <input
+            type="text"
+            value={secondaryNumber}
+            onChange={(e) => setSecondaryNumber(e.target.value)}
+          />
+
+          <label>Business:</label>
+          <input
+            type="text"
+            value={business}
+            onChange={(e) => setBusiness(e.target.value)}
+          />
+
+          <label>Location:</label>
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+
+          <label>Login Pin:</label>
+          <input
+            type="password"
+            value={loginPin}
+            onChange={(e) => setLoginPin(e.target.value)}
           />
         </div>
       </div>
