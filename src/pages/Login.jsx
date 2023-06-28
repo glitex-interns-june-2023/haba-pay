@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -13,9 +14,40 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform login functionality here
+    setLoading(true);
+
+    try {
+      // Send a POST request to the login API endpoint
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      if (response.ok) {
+        // Handle successful response
+        const data = await response.json();
+        console.log(data);
+
+        // Reset the form
+        setEmail('');
+        setPassword('');
+      } else {
+        // Handle error responses from the API
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -38,8 +70,10 @@ function Login() {
             <input type="password" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
+          <button className="login-btn" type="submit" disabled={loading}>
+            {loading ? 'Processing...' : 'Log In'}
+          </button>
         </form>
-        <button className="login-btn" type="submit">Processing...</button>
         <Link to="/resetpassword" className="forgot-pwd">
           Forgot Password?
         </Link>
