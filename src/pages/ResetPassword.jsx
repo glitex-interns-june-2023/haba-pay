@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
-  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -10,8 +10,8 @@ const ResetPassword = () => {
   const [timer, setTimer] = useState(0);
   const navigate = useNavigate();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
   };
 
   const handleOtpChange = (e) => {
@@ -39,7 +39,7 @@ const ResetPassword = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
+        phoneNumber,
       }),
     })
       .then((response) => response.json())
@@ -70,7 +70,7 @@ const ResetPassword = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
+        phoneNumber,
         otp,
         newPassword,
       }),
@@ -102,7 +102,7 @@ const ResetPassword = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
+        phoneNumber,
       }),
     })
       .then((response) => response.json())
@@ -146,7 +146,7 @@ const ResetPassword = () => {
         <div>
           {resetStatus === 'otpSent' ? (
             <div>
-              <p>An OTP has been sent to your email. Please enter it below.</p>
+              <p>An OTP has been sent to your phone number. Please enter it below.</p>
               <form onSubmit={handleResetPassword}>
                 <label htmlFor="otp">OTP Code</label>
                 <input
@@ -187,14 +187,14 @@ const ResetPassword = () => {
             </div>
           ) : (
             <div className="send-otp">
-              <p>Enter your email to receive an OTP to reset your password.</p>
+              <p>Enter your phone number to receive an OTP to reset your password.</p>
               <form onSubmit={handleSendOTP}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="phoneNumber">Phone Number</label>
                 <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={handleEmailChange}
+                  type="text"
+                  id="phoneNumber"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
                 />
                 <br />
                 {resetStatus === 'loading' && <p>Loading...</p>}
