@@ -186,7 +186,7 @@ const ResetPassword = () => {
               {timer > 0 && <p>Resend OTP available in {timer} seconds</p>}
             </div>
           ) : (
-            <div>
+            <div className="send-otp">
               <p>Enter your email to receive an OTP to reset your password.</p>
               <form onSubmit={handleSendOTP}>
                 <label htmlFor="email">Email</label>
