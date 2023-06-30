@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -16,7 +16,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-/*    setLoading(true);
+    setLoading(true);
 
     try {
       // Send a POST request to the login API endpoint
@@ -47,7 +47,7 @@ function Login() {
       console.error(error);
     }
 
-    setLoading(false); */
+    setLoading(false);
   };
 
   return (
@@ -70,7 +70,9 @@ function Login() {
             <input type="password" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
-          <button className="login-btn" type="submit">Processing...</button>
+          <button className="login-btn" type="submit" disabled={loading}>
+            {loading ? 'Processing...' : 'Log In'}
+          </button>
         </form>
         <Link to="/resetpassword" className="forgot-pwd">
           Forgot Password?
