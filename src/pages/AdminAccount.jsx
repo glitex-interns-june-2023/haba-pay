@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminAccount = () => {
+  const history = useNavigate(); 
   const [name, setName] = useState('');
   const [primaryNumber, setPrimaryNumber] = useState('');
   const [email, setEmail] = useState('');
@@ -11,11 +13,34 @@ const AdminAccount = () => {
   const [loginPin, setLoginPin] = useState('');
 
   const handleCancel = () => {
-    // Cancel logic
+    history('/abort'); 
   };
 
   const handleVerify = () => {
-    // Verification logic
+    
+    sendVerificationEmail(email);
+
+    history('/verifyemail'); 
+  };
+
+  const sendVerificationEmail = async (email) => {
+    try {
+      const response = await fetch('YOUR_VERIFICATION_API_ENDPOINT', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        console.log('Verification email sent successfully!');
+      } else {
+        console.log('Failed to send verification email.');
+      }
+    } catch (error) {
+      console.error('An error occurred while sending the verification email:', error);
+    }
   };
 
   return (
