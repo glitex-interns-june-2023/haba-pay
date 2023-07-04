@@ -82,6 +82,7 @@ body {
     height: 480px;
     left: 535px;
     top: 100px;
+    background: #FFFEFD;
     border: 0.5px solid #DED9D9;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
     border-radius: 2px;
@@ -247,11 +248,12 @@ body {
 
 /* ADMIN ACCOUNT */
 
-.create-account {
+.create-account, .edit-account {
     overflow: hidden;
+    background: #FFFEFD;
 }
 
-.create-account h1 {
+.create-account h1, .edit-account h1 {
     color: #323232;
     font-size: 22px;
     font-family: IBM Plex Sans;
@@ -260,7 +262,7 @@ body {
     margin-top: 50px;
 }
 
-.create-account p {
+.create-account p, .edit-account p {
     color: #323232;
     font-size: 18px;
     font-family: IBM Plex Sans;
@@ -342,7 +344,7 @@ body {
     color: #FDAC15;
 }
 
-.btn-verify {
+.btn-verify, .btn-save {
     width: 240px;
     padding: 10px;
     border-radius: 5px;
@@ -354,7 +356,7 @@ body {
     color: #FFFEFD;
 }
 
-.verify-email, .verify-number, .abort-process {
+.verify-email, .verify-number, .app-pin, .abort-process {
     width: 370px;
     height: 542px; 
     left: 535px;
@@ -366,7 +368,7 @@ body {
     position: absolute;
 }
 
-.verify-email h1, .verify-number h1 {
+.verify-email h1, .verify-number h1, .app-pin h1 {
     font-size: 22px;
     font-family: IBM Plex Sans;
     font-weight: 600;
@@ -374,7 +376,7 @@ body {
     margin-top: 50px;
 }
 
-.verify-email p, .verify-number p {
+.verify-email p, .verify-number p, .app-pin p {
     font-size: 18px;
     font-family: IBM Plex Sans;
     text-align: center;
@@ -409,6 +411,50 @@ body {
     align-items: center;
     gap: 10px;
     margin-top: 200px;
+    margin-left: 65px;
+    border-radius: 5px;
+    background-color: #FDAC15;
+    border: none;
+    color: #FFFEFD;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+}
+
+.app-pin {
+    background: #FFFEFD;
+}
+
+.app-pin label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    margin-left: 25px;
+}
+
+.app-pin label:first-of-type {
+    padding-top: 50px;
+}
+
+.app-pin input {
+    width: 310px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DED9D9;
+}
+
+.app-pin button {
+    display: flex;
+    width: 240px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 98px;
     margin-left: 65px;
     border-radius: 5px;
     background-color: #FDAC15;
@@ -472,4 +518,34 @@ body {
     font-family: IBM Plex Sans;
     font-weight: 600;
     color: #FFFEFD;
+}
+
+
+/* SUSPEND ACCOUNT */
+
+.suspend-account {
+    overflow: hidden;
+    background: #FFFEFD;
+    height: 100vh;
+}
+
+.suspend-account h1 {
+    color: #323232;
+    font-size: 22px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.suspend-details {
+    display: inline-flex;
+    padding: 17px 60px;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    margin-left: 80px;
+    border: 0.5px solid #DED9D9;
+    background: #FFFEFD;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-const AdminAccount = () => {
+const CreateAccount = () => {
   const history = useNavigate(); 
   const [name, setName] = useState('');
   const [primaryNumber, setPrimaryNumber] = useState('');
@@ -113,8 +114,12 @@ const AdminAccount = () => {
         <button onClick={handleCancel} className="btn-cancel">Cancel</button>
         <button onClick={handleVerify} className="btn-verify">Verify</button>
       </div>
+
+      <Link to="/verifyemail">Verify Email</Link>
+      <Link to="/verifynumber">Verify Number</Link>
+      <Link to="/apppin">App Pin</Link>
     </div>
   );
 };
 
-export default AdminAccount;
+export default CreateAccount;

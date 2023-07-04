@@ -77,6 +77,9 @@ function Login() {
         <Link to="/resetpassword" className="forgot-pwd">
           Forgot Password?
         </Link>
+
+        <Link to="/createaccount">Create Account</Link>
+        <Link to="/editaccount">Edit-Account</Link>
       </div>
     </div>
   );
