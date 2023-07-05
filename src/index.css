@@ -373,7 +373,7 @@ body {
     font-family: IBM Plex Sans;
     font-weight: 600;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .verify-email p, .verify-number p, .app-pin p {
@@ -472,7 +472,7 @@ body {
     font-size: 24px;
     font-family: IBM Plex Sans;
     font-weight: 600;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .abort-process p {
