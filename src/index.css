@@ -421,7 +421,8 @@ body {
     font-weight: 600;
 }
 
-.app-pin {
+.app-pin, .verify-email, .verify-number  {
+    overflow: hidden;
     background: #FFFEFD;
 }
 
