@@ -121,10 +121,6 @@
     text-decoration: none;
 }
 
-.menu {
-    
-}
-
 .menu ul {
     padding: 10px;
     margin: 0;
@@ -150,7 +146,7 @@ ul .home img {
 .image-container {
     margin-right: 10px; 
     display: inline-block;
-  }
+}
   
 
 ul .home a {
