@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.jpg';
+import logo from '../Assets/logo.jpg';
 import '../index.css'
 
-const Home = () => {
+const SplashScreen = () => {
   const navigate = useNavigate();
 
   const handleSignInButtonClick = () => {
@@ -25,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SplashScreen;
