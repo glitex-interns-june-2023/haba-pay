@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/LeftSidebar.css'
+import '../Styles/LeftSidebar.css';
 import profile from '../Assets/profile.png';
 import eye from '../Assets/eye.png';
 import home from '../Assets/home.png';

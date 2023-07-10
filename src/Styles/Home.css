@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+}
+  
+  .LeftSidebar {
+    flex: 0 0 100px; 
+}
+  
+.Navbar {
+    flex: 1;
+    margin-top: 5px;
+}
+  

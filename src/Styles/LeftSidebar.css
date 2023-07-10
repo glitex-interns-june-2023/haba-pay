@@ -1,13 +1,12 @@
 .left-sidebar {
     width: 300px;
-    min-height: 100vh;
+    height: 1024px;
     flex-shrink: 0;
     border: 1px solid #DED9D9;
     background: #FFFEFD;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 .sidebar-details {
@@ -29,7 +28,7 @@
     font-family: IBM Plex Sans;
     font-size: 32px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 30px;
 }
   
 .user-details {

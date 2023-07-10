@@ -10,7 +10,7 @@ import AppPin from './Pages/AppPin';
 import Abort from './Pages/Abort';
 import EditAccount from './Pages/EditAccount';
 import SuspendAccount from './Pages/SuspendAccount';
-import LeftSidebar from './Components/LeftSidebar';
+import Home from './Pages/Home';
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/abort" element={<Abort />} />
         <Route path="/edit-account" element={<EditAccount />} />
         <Route path="/suspend-account" element={<SuspendAccount />} />
-        <Route path="/left-sidebar" element={<LeftSidebar />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );
