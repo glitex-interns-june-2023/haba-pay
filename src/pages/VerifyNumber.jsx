@@ -7,10 +7,50 @@ function NumberVerification() {
     setOtp(event.target.value);
   };
 
-  const handleVerifyClick = () => {
-    // Perform verification logic here using the 'otp' value
+  const handleVerifyClick = async () => {
+    try {
+      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/google/verify-otp/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ otp }),
+      });
 
-    alert('Number verification successful!');
+      if (response.ok) {
+        console.log('Number verification successful!');
+        // Redirect or show a success message
+      } else {
+        console.log('Failed to verify number.');
+        // Handle error response
+      }
+    } catch (error) {
+      console.error('An error occurred while verifying the number:', error);
+      // Handle error
+    }
+  };
+
+  const handleResendOtp = async () => {
+    try {
+      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/google/update-phone-number/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phoneNumber: 'USER_PHONE_NUMBER' }),
+      });
+
+      if (response.ok) {
+        console.log('OTP sent successfully!');
+        // Handle success
+      } else {
+        console.log('Failed to send OTP.');
+        // Handle error response
+      }
+    } catch (error) {
+      console.error('An error occurred while sending the OTP:', error);
+      // Handle error
+    }
   };
 
   return (
@@ -25,6 +65,7 @@ function NumberVerification() {
         onChange={handleOtpChange}
       />
       <button onClick={handleVerifyClick}>Verify</button>
+      <button onClick={handleResendOtp}>Resend OTP</button>
     </div>
   );
 }

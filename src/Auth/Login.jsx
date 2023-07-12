@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -19,28 +20,26 @@ function Login() {
     setLoading(true);
 
     try {
-      // Send a POST request to the login API endpoint
-      const response = await fetch('/api/login', {
+      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/admins/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email,
+          username: email,
           password,
         }),
       });
 
       if (response.ok) {
-        // Handle the successful response or perform any necessary actions
         const data = await response.json();
         console.log(data);
 
-        // Reset the form
         setEmail('');
         setPassword('');
+
+        navigate('/home');
       } else {
-        // Handle error responses from the API
         console.error('Login failed');
       }
     } catch (error) {
@@ -62,24 +61,23 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <label>
             Email
-            <input type="email" value={email} onChange={handleEmailChange} />
+            <input type="email" id="email" value={email} onChange={handleEmailChange} />
           </label>
           <br />
           <label>
             Password
-            <input type="password" value={password} onChange={handlePasswordChange} />
+            <input type="password" id="password" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
           <button className="login-btn" type="submit" disabled={loading}>
             {loading ? 'Processing...' : 'Log In'}
           </button>
         </form>
-        <Link to="/resetpassword" className="forgot-pwd">
+
+        <Link to="/reset-password" className="forgot-pwd">
           Forgot Password?
         </Link>
 
-        <Link to="/createaccount">Create Account</Link>
-        <Link to="/editaccount">Edit-Account</Link>
       </div>
     </div>
   );

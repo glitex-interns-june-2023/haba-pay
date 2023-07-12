@@ -8,27 +8,7 @@ function EmailVerification() {
   };
 
   const handleVerifyClick = () => {
-    // API call to verify the pin
-    fetch('/api/verify-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ pin }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Handle the response from the API
-        if (data.success) {
-          alert('Email verification successful!');
-        } else {
-          alert('Email verification failed. Please try again.');
-        }
-      })
-      .catch(error => {
-        console.error('Error verifying email:', error);
-        alert('An error occurred while verifying the email.');
-      });
+   
   };
 
   return (

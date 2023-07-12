@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
@@ -8,7 +9,11 @@ const Home = () => {
     <div className="container">
       <LeftSidebar />
       <Navbar />
-      {/* The rest of your content */}
+      
+      <Link to="/create-account" className="forgot-pwd">
+          Create Account
+      </Link>
+
     </div>
   );
 };

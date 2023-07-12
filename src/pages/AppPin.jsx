@@ -1,50 +1,30 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const AppLogin = () => {
+const AppPin = () => {
+  const history = useNavigate();
   const [loginPin, setLoginPin] = useState('');
-  const [confirmPin, setConfirmPin] = useState('');
 
-  const handleLoginPinChange = (event) => {
-    setLoginPin(event.target.value);
-  };
-
-  const handleConfirmPinChange = (event) => {
-    setConfirmPin(event.target.value);
-  };
-
-  const handleFinishClick = () => {
-    if (loginPin === confirmPin) {
-      console.log('PIN saved:', loginPin);
-    } else {
-      console.log('PINs do not match');
-    }
+  const handleCreatePin = () => {
+    // Handle login pin creation logic here
+    // Redirect to the finish page or show a success toast
+    toast.success('Account was created successfully');
+    history('/dashboard');
   };
 
   return (
-    <div class="app-pin">
-      <h1>App Login PIN</h1>
-      <p>Create a PIN to log in to the app</p>
-      <label>
-        Login PIN
-        <input
-          type="password"
-          value={loginPin}
-          onChange={handleLoginPinChange}
-        />
-      </label>
-      <br />
-      <label>
-        Confirm PIN
-        <input
-          type="password"
-          value={confirmPin}
-          onChange={handleConfirmPinChange}
-        />
-      </label>
-      <br />
-      <button onClick={handleFinishClick}>Finish</button>
+    <div>
+      <h1>App Pin Page</h1>
+      <p>Create a new login pin for the app</p>
+      <input
+        type="password"
+        value={loginPin}
+        onChange={(e) => setLoginPin(e.target.value)}
+      />
+      <button onClick={handleCreatePin}>Finish</button>
     </div>
   );
 };
 
-export default AppLogin;
+export default AppPin;

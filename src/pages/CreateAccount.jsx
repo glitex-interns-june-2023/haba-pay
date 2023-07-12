@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom'
 
 const CreateAccount = () => {
-  const history = useNavigate(); 
+  const history = useNavigate();
   const [name, setName] = useState('');
   const [primaryNumber, setPrimaryNumber] = useState('');
   const [email, setEmail] = useState('');
@@ -14,40 +13,49 @@ const CreateAccount = () => {
   const [loginPin, setLoginPin] = useState('');
 
   const handleCancel = () => {
-    history('/abort'); 
+    history('/abort');
   };
 
-  const handleVerify = () => {
-    
-    sendVerificationEmail(email);
-
-    history('/verifyemail'); 
-  };
-
-  const sendVerificationEmail = async (email) => {
+  const handleVerifyEmail = async () => {
     try {
-      const response = await fetch('YOUR_VERIFICATION_API_ENDPOINT', {
+      // Simulating the API request with a delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Generate a verification pin 
+      const verificationPin = generateVerificationPin();
+      // Send the verification pin to the user's email address
+      await sendVerificationEmail(email, verificationPin);
+      history(`/verify-email?email=${email}`);
+    } catch (error) {
+      console.error('An error occurred while sending the verification email:', error);
+      // Handle error
+    }
+  };
+
+  const generateVerificationPin = () => {
+    // Generate a random verification pin
+    return Math.floor(1000 + Math.random() * 9000);
+  };
+
+  const sendVerificationEmail = async (email, verificationPin) => {
+    try {
+      await fetch('https://habaapi.glitexsolutions.co.ke/api/send-verification-code/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, verificationPin }),
       });
-
-      if (response.ok) {
-        console.log('Verification email sent successfully!');
-      } else {
-        console.log('Failed to send verification email.');
-      }
+      console.log('Verification email sent');
     } catch (error) {
       console.error('An error occurred while sending the verification email:', error);
+      // Handle error
     }
   };
 
   return (
     <div className="create-account">
-      <h1>Create User Account</h1>
-      <p>Enter account details for new account</p>
+      <h1>Create Admin Account</h1>
+      <p>Enter account details for the new admin account</p>
       <div className="details">
         <div className="detail">
           <label>Name</label>
@@ -112,12 +120,8 @@ const CreateAccount = () => {
 
       <div className="acc-btn">
         <button onClick={handleCancel} className="btn-cancel">Cancel</button>
-        <button onClick={handleVerify} className="btn-verify">Verify</button>
+        <button onClick={handleVerifyEmail} className="btn-verify">Verify Email</button>
       </div>
-
-      <Link to="/verifyemail">Verify Email</Link>
-      <Link to="/verifynumber">Verify Number</Link>
-      <Link to="/apppin">App Pin</Link>
     </div>
   );
 };
