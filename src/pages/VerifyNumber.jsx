@@ -19,14 +19,11 @@ function NumberVerification() {
 
       if (response.ok) {
         console.log('Number verification successful!');
-        // Redirect or show a success message
       } else {
         console.log('Failed to verify number.');
-        // Handle error response
       }
     } catch (error) {
       console.error('An error occurred while verifying the number:', error);
-      // Handle error
     }
   };
 
@@ -42,14 +39,11 @@ function NumberVerification() {
 
       if (response.ok) {
         console.log('OTP sent successfully!');
-        // Handle success
       } else {
         console.log('Failed to send OTP.');
-        // Handle error response
       }
     } catch (error) {
       console.error('An error occurred while sending the OTP:', error);
-      // Handle error
     }
   };
 

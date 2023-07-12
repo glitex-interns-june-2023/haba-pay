@@ -18,22 +18,18 @@ const CreateAccount = () => {
 
   const handleVerifyEmail = async () => {
     try {
-      // Simulating the API request with a delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      // Generate a verification pin 
+
       const verificationPin = generateVerificationPin();
-      // Send the verification pin to the user's email address
       await sendVerificationEmail(email, verificationPin);
       history(`/verify-email?email=${email}`);
     } catch (error) {
       console.error('An error occurred while sending the verification email:', error);
-      // Handle error
     }
   };
 
   const generateVerificationPin = () => {
-    // Generate a random verification pin
-    return Math.floor(1000 + Math.random() * 9000);
+    return Math.floor(100000 + Math.random() * 900000);
   };
 
   const sendVerificationEmail = async (email, verificationPin) => {
@@ -48,7 +44,6 @@ const CreateAccount = () => {
       console.log('Verification email sent');
     } catch (error) {
       console.error('An error occurred while sending the verification email:', error);
-      // Handle error
     }
   };
 
