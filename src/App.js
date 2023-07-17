@@ -11,6 +11,7 @@ import Abort from './Pages/Abort';
 import EditAccount from './Pages/EditAccount';
 import SuspendAccount from './Pages/SuspendAccount';
 import Home from './Pages/Home';
+import HabaChart from './Components/HabaChart';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/edit-account" element={<EditAccount />} />
         <Route path="/suspend-account" element={<SuspendAccount />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/chart" element={<HabaChart />} />
       </Routes>
     </Router>
   );
