@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
+import '../Styles/HabaChart.css';
 
 const HabaChart = () => {
   const data = {
@@ -56,30 +57,32 @@ const HabaChart = () => {
   };
 
   return (
-    <div style={{ width: '550px' }}>
-      <Line data={data} options={options} height={100} />
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+    <div style={{ width: '600px' }}>
+      <Line data={data} options={options} height={150} />
+      <div className ="legend" style={{ 
+        display: 'flex', justifyContent: 'center', marginTop: '8px' 
+        }}>
         LEGEND
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+        <div className="new-users" style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
           <div
             style={{
               width: '10px',
               height: '10px',
-              backgroundColor: 'rgba(0, 0, 0, 1)',
+              backgroundColor: '#FDAC15',
               marginRight: '5px',
               borderRadius: '50%',
             }}
           />
           New Users
         </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="national-reach" style={{ display: 'flex', alignItems: 'center' }}>
           <div
             style={{
               width: '10px',
               height: '10px',
-              backgroundColor: 'rgba(0, 0, 0, 1)',
+              backgroundColor: '#323232',
               marginRight: '5px',
               borderRadius: '50%',
             }}
