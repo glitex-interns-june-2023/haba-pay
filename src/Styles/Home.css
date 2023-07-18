@@ -118,7 +118,7 @@
     width: 652px;
     justify-content: space-between;
     align-items: center;
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .recent {
@@ -146,7 +146,7 @@ span .client {
     font-weight: 600;
 }
 
-.time {
+.recent .time {
     color: var(--black, #323232);
     font-family: IBM Plex Sans;
     font-size: 14px;
