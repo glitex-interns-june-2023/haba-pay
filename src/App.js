@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SplashScreen from './Pages/SplashScreen';
+import SplashScreen from './pages/SplashScreen';
 import Login from './Auth/Login';
 import ResetPassword from './Auth/ResetPassword';
-import CreateAccount from './Pages/CreateAccount';
-import VerifyEmail from './Pages/VerifyEmail';
-import VerifyNumber from './Pages/VerifyNumber';
-import AppPin from './Pages/AppPin';
-import Abort from './Pages/Abort';
-import EditAccount from './Pages/EditAccount';
-import SuspendAccount from './Pages/SuspendAccount';
-import Home from './Pages/Home';
+import CreateAccount from './pages/CreateAccount';
+import VerifyEmail from './pages/VerifyEmail';
+import VerifyNumber from './pages/VerifyNumber';
+import AppPin from './pages/AppPin';
+import Abort from './pages/Abort';
+import EditAccount from './pages/EditAccount';
+import SuspendAccount from './pages/SuspendAccount';
+import Home from './pages/Home';
 import HabaChart from './Components/HabaChart';
 
 const App = () => {
