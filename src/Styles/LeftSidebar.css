@@ -23,7 +23,7 @@
     margin-bottom: auto;
 }
 
-.title {
+.header-title {
     color: #FDAC15;
     font-family: IBM Plex Sans;
     font-size: 32px;
@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .user-details img {
@@ -52,6 +53,7 @@
     padding: 0px 10px;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
 }
 
 .user-detail h2 {
@@ -78,6 +80,7 @@
     border-radius: 5px;
     background: #FFFEFD;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
 }
 
 .current-bal {
@@ -110,6 +113,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 60px;
+    padding-top: 20px;
 }
 
 .sidebar-menu li {
@@ -118,6 +122,17 @@
 
 .sidebar-menu li a {
     text-decoration: none;
+}
+
+.sidebar-menu li a.active {
+    display: flex;
+    width: 210px;
+    padding: 8px;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 5px;
+    color: #FDAC15;
+    background-color: #FFFBF4;
 }
 
 .menu ul {
@@ -130,10 +145,8 @@ ul .home {
     width: 210px;
     padding: 8px;
     margin-top: 15px;
-    margin-left: 12px;
     align-items: center;
     border-radius: 5px;
-    background: #FFFBF4;
 }
 
 ul .home img {
@@ -149,7 +162,7 @@ ul .home img {
   
 
 ul .home a {
-    color: #FDAC15;
+    color: #898989;
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 600;
@@ -160,7 +173,7 @@ ul .analytics {
     display: flex;
     width: 220px;
     padding: 10px;
-    margin-left: 12px;
+    margin-left: 8px;
     align-items: center;
     border-radius: 5px;
 }
@@ -182,7 +195,7 @@ ul .manage-users {
     display: flex;
     width: 220px;
     padding: 10px;
-    margin-left: 12px;
+    margin-left: 8px;
     align-items: center;
     border-radius: 5px;
 }
@@ -198,4 +211,58 @@ ul .manage-users a {
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 600;
+}
+
+.settings {
+    padding-top: 200px;
+}
+
+.setting {
+    display: flex;
+    width: 240px;
+    padding: 10px;
+    margin-left: 24px;
+    align-items: center;
+}
+
+.setting a {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #898989;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.setting img {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
+}
+
+.logout {
+    display: flex;
+    width: 240px;
+    padding: 10px;
+    margin-left: 24px;
+    align-items: center;
+}
+
+.logout a {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #898989;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logout img {
+    vertical-align: middle;
+    width: 24px;
+    height: 18px;
+    padding-right: 8px;
 }

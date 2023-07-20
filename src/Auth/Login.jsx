@@ -52,7 +52,7 @@ function Login() {
   return (
     <div>
       <div className="title">
-        <h1>HabaPay</h1>
+        <h2>HabaPay</h2>
       </div>
       <div className="login-content">
         <div className="login-title">

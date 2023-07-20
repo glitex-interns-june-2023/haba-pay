@@ -12,6 +12,7 @@ import EditAccount from './pages/EditAccount';
 import SuspendAccount from './pages/SuspendAccount';
 import Home from './pages/Home';
 import HabaChart from './Components/HabaChart';
+import Analytics from './pages/Analytics';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/suspend-account" element={<SuspendAccount />} />
         <Route path="/home" element={<Home />} />
         <Route path="/chart" element={<HabaChart />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </Router>
   );
