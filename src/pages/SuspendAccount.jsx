@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import checkbox from '../Assets/checkbox.png';
+import checkbox from '../assets/checkbox.png';
 
 function SuspendAccount() {
   const [isSuspended, setIsSuspended] = useState(false);

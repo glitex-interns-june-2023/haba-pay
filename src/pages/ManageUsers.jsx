@@ -2,7 +2,7 @@ import React from 'react';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
 import '../Styles/ManageUsers.css';
-import filter from '../Assets/filter.png';
+import filter from '../assets/filter.png';
 import forwardreview from '../assets/forwardreview.png';
 import uncheck from '../assets/uncheck.png';
 import manage from '../assets/manage.png';
