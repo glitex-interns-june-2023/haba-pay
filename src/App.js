@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import HabaChart from './Components/HabaChart';
 import Analytics from './pages/Analytics';
 import ManageUsers from './pages/ManageUsers';
+import Settings from './pages/Settings';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/chart" element={<HabaChart />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/manage-users" element={<ManageUsers />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

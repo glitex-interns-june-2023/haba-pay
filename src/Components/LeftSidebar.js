@@ -36,7 +36,7 @@ const LeftSidebar = () => {
           <div className="menu">
             <ul>
               <li className="home">
-                <NavLink to="/home" activeClassName="active">
+                <NavLink to="/home" activeclassname="active">
                   <div className="image-container">
                     <img src={home} alt="home" />
                   </div>
@@ -45,7 +45,7 @@ const LeftSidebar = () => {
               </li>
 
               <li className="analytics">
-                <NavLink to="/analytics" activeClassName="active">
+                <NavLink to="/analytics" activeclassname="active">
                   <div className="image-container">
                     <img src={analytics} alt="analytics" />
                   </div>
@@ -54,7 +54,7 @@ const LeftSidebar = () => {
               </li>
 
               <li className="manage-users">
-                <NavLink to="/manage-users" activeClassName="active">
+                <NavLink to="/manage-users" activeclassname="active">
                   <div className="image-container">
                     <img src={users} alt="users" />
                   </div>
@@ -67,7 +67,7 @@ const LeftSidebar = () => {
 
         <div className="settings">
           <div className="setting">
-            <NavLink to="/setting">
+            <NavLink to="/settings">
               <img src={settings} alt="" />
               Settings
             </NavLink>

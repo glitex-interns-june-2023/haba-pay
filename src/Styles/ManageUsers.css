@@ -51,6 +51,7 @@
     border-radius: 5px;
     border: 1px solid #FDAC15;
     height: 20px;
+    position: relative;
 }
 
 .quick-actions h5 {
@@ -58,6 +59,62 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; 
+    z-index: 9999; 
+  }  
+
+.quick-actions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 165px;
+    padding: 10px;
+    margin-top: 5px;
+    gap: 5px;
+    border-radius: 5px;
+    background: #FFFEFD;
+    z-index: 1;
+}
+
+.quick-actions button {
+    display: flex;
+    width: 148px;
+    padding: 5px 0px;
+    align-items: center;
+    gap: 10px;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+    border: none;
+    background: none;
+}
+
+.quick-actions svg {
+    width: 24px;
+    height: 24px;
+}
+
+.quick-actions span {
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.suspenduser-btn svg,
+.restoreuser-btn svg {
+    width: 24px;
+    height: 19px;
+    margin-left: 2px;
 }
 
 .quick-filter {
@@ -76,6 +133,11 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
+}
+
+.quick-actions.open .quick-actions-dropdown,
+.quick-filter.open .filter-dropdown {
+  display: block; /* Show the dropdown content when the corresponding button is clicked */
 }
 
 .manage-numbers {
