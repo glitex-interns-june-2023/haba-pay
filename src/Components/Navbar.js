@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../Styles/Navbar.css';
-import search from '../Assets/search.png';
-import searchfilter from '../Assets/searchfilter.png'; 
-import theme from '../Assets/theme.png';
-import notification from '../Assets/notification.png';
-import profile from '../Assets/profile.png';
+import search from '../assets/search.png';
+import searchfilter from '../assets/searchfilter.png'; 
+import theme from '../assets/theme.png';
+import notification from '../assets/notification.png';
+import profile from '../assets/profile.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -3,9 +3,9 @@ import '../Styles/Home.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
 import RightSidebar from '../Components/RightSidebar';
-import dropdown from '../Assets/dropdown.png';
-import vector from '../Assets/vector.png';
-import review from '../Assets/review.png'
+import dropdown from '../assets/dropdown.png';
+import vector from '../assets/vector.png';
+import review from '../assets/review.png';
 import HabaChart from '../Components/HabaChart';
 
 const Home = () => {

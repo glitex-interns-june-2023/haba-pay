@@ -13,6 +13,7 @@ import SuspendAccount from './pages/SuspendAccount';
 import Home from './pages/Home';
 import HabaChart from './Components/HabaChart';
 import Analytics from './pages/Analytics';
+import ManageUsers from './pages/ManageUsers';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/chart" element={<HabaChart />} />
         <Route path="/analytics" element={<Analytics />} />
+        <Route path="/manage-users" element={<ManageUsers />} />
       </Routes>
     </Router>
   );

@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../Styles/LeftSidebar.css';
-import profile from '../Assets/profile.png';
-import eye from '../Assets/eye.png';
-import home from '../Assets/home.png';
-import analytics from '../Assets/analytics.png';
-import users from '../Assets/users.png';
-import settings from '../Assets/settings.png';
-import logout from '../Assets/logout.png';
+import profile from '../assets/profile.png';
+import eye from '../assets/eye.png';
+import home from '../assets/home.png';
+import analytics from '../assets/analytics.png';
+import users from '../assets/users.png';
+import settings from '../assets/settings.png';
+import logout from '../assets/logout.png';
 
 const LeftSidebar = () => {
   return (

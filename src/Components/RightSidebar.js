@@ -1,8 +1,8 @@
 import React from 'react';
-import approved from '../Assets/approved.png';
-import pending from '../Assets/pending.png';
-import review from '../Assets/review.png';
-import user from '../Assets/user.png';
+import approved from '../assets/approved.png';
+import pending from '../assets/pending.png';
+import review from '../assets/review.png';
+import user from '../assets/user.png';
 import '../Styles/RightSidebar.css';
 
 const RightSidebar = () => {
