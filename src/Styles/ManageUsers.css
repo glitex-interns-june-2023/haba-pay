@@ -71,7 +71,8 @@
     z-index: 9999; 
   }  
 
-.quick-actions-dropdown {
+.quick-actions-dropdown, 
+.filter-dropdown {
     position: absolute;
     top: 100%;
     left: 0;
@@ -86,7 +87,8 @@
     z-index: 1;
 }
 
-.quick-actions button {
+.quick-actions button, 
+.filter-dropdown button {
     display: flex;
     width: 148px;
     padding: 5px 0px;
@@ -98,12 +100,14 @@
     background: none;
 }
 
-.quick-actions svg {
+.quick-actions svg,
+.filter-dropdown svg {
     width: 24px;
     height: 24px;
 }
 
-.quick-actions span {
+.quick-actions span,
+.filter-dropdown span {
     color: #FDAC15;
     font-family: IBM Plex Sans;
     font-size: 18px;
@@ -126,6 +130,7 @@
     border: 1px solid #FDAC15;
     height: 20px;
     margin-left: 20px;
+    position: relative;
 }
 
 .quick-filter h6 {
