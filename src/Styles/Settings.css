@@ -1,0 +1,280 @@
+.settings-container {
+    display: flex;
+    min-height: 100vh;
+}
+  
+.LeftSidebar {
+    flex: 0 0 100px;
+}
+  
+.Navbar {
+    flex: 1;
+    margin-top: 5px;
+}
+
+.profile-settings {
+    width: 1102px;
+    height: 954px;
+    margin: 120px 25px;
+    border-radius: 5px;
+    border: 1px solid #323232;
+    background: #FFFEFD;
+}
+
+.back-login {
+    padding: 15px 15px;
+}
+
+.back-login svg {
+    width: 12px;
+    height: 16px;  
+}
+
+.back-login span {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 3px;
+}
+
+.profile-setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;;
+}
+
+.profile-logo {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-logo img {
+    width: 80px;
+    height: 80px;
+}
+
+.profile-logo h6 {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.profile-name {
+    margin-top: -30px;
+}
+
+.profile-name h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profile-name span svg {
+    width: 16px;
+    height: 20px;
+    padding-left: 5px;
+}
+
+.setting-details {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-top: -10px;
+}
+
+.setting-habapay span img, 
+.setting-date svg {
+    width: 17px;
+    height: 18px;
+    padding-right: 3px;
+}
+
+.setting-habapay span, 
+.setting-location span,
+.setting-date span {
+    color: #323232;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.setting-location span svg {
+    width: 13px;
+    height: 17px;
+    padding-right: 3px;
+}
+
+.setting-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+    margin-top: -8px;
+}
+
+.setting-detail h2 {
+    color: var(--theme, #FDAC15);
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.profile-btn {
+    height: 20px;
+    width: 50px;
+    display: inline-flex;
+    padding: 4px 10px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+    margin-top: 25px;
+}
+
+.setting-notification {
+    height: 20px;
+    width: 102px;
+    display: inline-flex;
+    padding: 4px 10px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+    margin-top: 25px;
+}
+
+.general-setting {
+    height: 20px;
+    width: 65px;
+    display: inline-flex;
+    padding: 4px 10px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+    margin-top: 25px;
+}
+
+.settings-notifications {
+    width: 1075px;
+    height: 415px;
+    border-radius: 5px;
+    border: 1px solid #DED9D9;
+    background: #FFFEFD;
+    margin: 15px 12px;
+}
+
+.notifications-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 694px;
+}
+
+.notification-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.allow-notification {
+    display: flex;
+    padding: 4px 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 1px solid #323232;
+    height: 18px;
+}
+
+.allow-notification h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.notification-headers {
+    display: flex;
+    flex-direction: row;
+    width: 1075px;
+    height: 48px;
+    border: 0.5px solid #DED9D9;
+    background: #FFF7E8;
+    margin-top: -8px;
+}
+
+.notification-type h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.notification-browser h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 620px;
+}
+
+.check-browser {
+    display: flex;
+    flex-direction: column;
+    padding-left: 650px;
+    gap: 48px;
+}
+
+.notification-email h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 120px;
+}
+
+.check-email {
+    display: flex;
+    flex-direction: column;
+    padding-left: 135px;
+    gap: 48px;
+}
+
+.notification-text h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 120px;
+}
+
+.check-type {
+    display: flex;
+    flex-direction: column;
+    padding-left: 130px;
+    gap: 48px;
+}
+
+.habapay-notification {
+    width: 1075px;
+    height: 60px;
+    flex-shrink: 0;
+    border: 0.5px solid #FFF7E8;
+    display: flex;
+    flex-direction: row;
+}
+
+.habapay-notification h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+}
