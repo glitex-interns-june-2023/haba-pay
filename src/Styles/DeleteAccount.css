@@ -1,0 +1,90 @@
+.delete-account {
+    overflow: hidden;
+    background: #FFFEFD;
+    height: 100vh;
+}
+
+.delete-account h1 {
+    color: #323232;
+    font-size: 22px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.delete-details {
+    display: inline-flex;
+    padding: 17px 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    margin: 15px 320px;
+    border: 0.5px solid #DED9D9;
+    background: #FFFEFD;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.delete-detail p {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.delete-detail p span {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 400;   
+}
+
+.delete-actions p {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    padding: 5px 10px;
+    align-items: center;
+    gap: 10px;
+    background: #FFFBF4;
+}
+
+.delete-actions p span {
+    font-size: 16px;
+}
+
+.delete-actions p svg {
+    padding-right: 8px;
+}
+
+.deleteaccount-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    gap: 40px;
+}
+
+.cancel-btn {
+    width: 240px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+    background-color: transparent;
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.delete-btn {
+    width: 240px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FDAC15;
+    color: #FFFEFD;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}

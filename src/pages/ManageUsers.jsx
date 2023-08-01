@@ -48,17 +48,19 @@ const ManageUsers = () => {
         // Placeholder function for "Create User" action
         // Implement your logic for creating a user here
         // For example, you can navigate to the create user page
-        navigate('/create-user');
+        navigate('/create-account');
     };
 
     const handleDeleteUser = () => {
         // Placeholder function for "Delete User" action
         // Implement your logic for deleting a user here
+        navigate('/delete-account')
     };
 
     const handleSuspendUser = () => {
         // Placeholder function for "Suspend User" action
         // Implement your logic for suspending a user here
+        navigate('/suspend-account')
     };
 
     const handleRestoreUser = (userEmail) => {

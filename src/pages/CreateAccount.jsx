@@ -51,8 +51,8 @@ const CreateAccount = () => {
     <div className="create-account">
       <h1>Create Admin Account</h1>
       <p>Enter account details for the new admin account</p>
-      <div className="details">
-        <div className="detail">
+      <div className="account-details">
+        <div className="account-detail">
           <label>Name</label>
           <input
             type="text"
@@ -82,7 +82,7 @@ const CreateAccount = () => {
           />
         </div>
 
-        <div className="detail">
+        <div className="account-detail">
           <label>Secondary Number</label>
           <input
             type="text"

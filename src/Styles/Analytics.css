@@ -1,0 +1,138 @@
+.analytics-container {
+    display: flex;
+    min-height: 100vh;
+}
+  
+.LeftSidebar {
+    flex: 0 0 100px;
+}
+  
+.Navbar {
+    flex: 1;
+    margin-top: 5px;
+}
+
+.analytics-statistics {
+    display: flex;
+    flex-direction: row;
+    margin: 120px 40px;
+}
+
+.analytic-statistic {
+    width: 672px;
+    height: 574px;
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+}
+
+.weekly-analytics {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.weekly-analytic {
+    width: 210px;
+    height: 136px;
+    padding-left: 8px;
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+    background: #FFF7E8;
+}
+
+.weekly-analytic h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.weekly-analytic h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.weekly-analytic p {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    margin-top: -1.5px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 5px;
+    background: #FFFEFD;
+}
+
+.analytics-adoption {
+    display: flex;
+    flex-direction: row;
+    gap: 380px;
+}
+
+.adoption-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.adoption-filter {
+    height: 25px;
+    width: 75px;
+    display: inline-flex;
+    padding: 4px 10px;
+    margin-top: 15px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+}
+
+.adoption-filter h3 {
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.adoption-filter span svg {
+    width: 24px;
+    height: 24px;
+    padding-top: 5px;
+}
+
+.adoption-chart {
+    padding-left: 15px;
+}
+
+.region-analytics {
+    width: 400px;
+    height: 574px;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+}
+
+.region-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.region-stats {
+    width: 388px;
+    height: 429px;
+    background: #FFF7E8;
+    margin-left: 6px;
+}
+
+.map-stats {
+    padding: 85px 70px;
+}

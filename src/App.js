@@ -10,6 +10,7 @@ import AppPin from './pages/AppPin';
 import Abort from './pages/Abort';
 import EditAccount from './pages/EditAccount';
 import SuspendAccount from './pages/SuspendAccount';
+import DeleteAccount from './pages/DeleteAccount';
 import Home from './pages/Home';
 import HabaChart from './Components/HabaChart';
 import Analytics from './pages/Analytics';
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/abort" element={<Abort />} />
         <Route path="/edit-account" element={<EditAccount />} />
         <Route path="/suspend-account" element={<SuspendAccount />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
         <Route path="/home" element={<Home />} />
         <Route path="/chart" element={<HabaChart />} />
         <Route path="/analytics" element={<Analytics />} />
