@@ -20,9 +20,8 @@
     width: 1075px;
     height: 530px;
     border-radius: 5px;
-    border: 1px solid #DED9D9;
+    border: 0.5px solid #DED9D9;
     margin: 110px 30px;
-    box-sizing: border-box !important;
 }
 
 .userprofile-stats {
@@ -110,13 +109,102 @@
 }
 
 .userprofile-accdetails {
-    width: 451px;
+    width: 411px !important;
     height: 719px;
     border-radius: 5px;
-    border: 1px solid #DED9D9;
+    border: 0.5px solid #DED9D9;
     background: #FFFEFD;
-    margin-left: 40px;
-    box-sizing: border-box !important;
+    margin: -47px 40px;
+}
+
+.userprofile-accdetails .userprofile-btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.userprofile-btns .userprofile-btn,
+.userprofile-btns .useractions-btn,
+.userprofile-btns .usercontact-btn {
+    display: inline-flex;
+    padding: 4px 10px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+    height: 30px;
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.line {
+    width: 348px;
+    height: 0.5px;
+    background: #DED9D9;
+    margin-left: 15px;
+}
+
+.userprofile-btns .usercontact-btn {
+    margin-right: 30px;
+}
+
+.useracc-details {
+    display: flex;
+    width: 348px;
+    height: 307px;
+    padding: 10px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.useremail,
+.userprimaryno,
+.usersecondaryno,
+.userbal {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: -8px 15px;
+}
+
+.useremail-detail,
+.userprimaryno-detail,
+.usersecondaryno-detail,
+.userbal-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.useremail-detail h2,
+.userprimaryno-detail h2,
+.usersecondaryno-detail h2,
+.userbal-detail h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.useremail-detail h3,
+.userprimaryno-detail h3,
+.usersecondaryno-detail h3,
+.userbal-detail h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -7px;
+}
+
+.useremail {
+    margin-left: 25px;
+}
+
+.useremail-detail {
+    margin-left: 18px;
 }
 
 .profile-activities {
