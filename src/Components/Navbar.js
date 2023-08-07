@@ -36,7 +36,7 @@ const Navbar = () => {
       case '/manage-users':
         return 'Manage Users';
       default:
-        return 'Page Title';
+        return 'Home';
     }
   };
 

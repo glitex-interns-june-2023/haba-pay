@@ -133,6 +133,23 @@
     margin-left: 6px;
 }
 
-.map-stats {
+.map {
     padding: 85px 70px;
+}
+
+.county-analytics {
+    position: relative;
+}
+
+.county-analytics img {
+    position: relative;
+}
+
+.county-analytic {
+    
+}
+
+.county-stats {
+    display: flex;
+    
 }

@@ -323,72 +323,72 @@ const ManageUsers = () => {
                     </div>
 
                     <div className="users-reg">
-                <div className="new-details">
-                    <div className="details-title">New Users</div>
-                    <div className="user-view">View All <img src={review} alt="" /></div>
-                </div>
+                        <div className="new-details">
+                            <div className="details-title">New Users</div>
+                            <div className="user-view">View All <img src={review} alt="" /></div>
+                        </div>
 
-                <div className="user-reg">
-                    <div className="date-reg">
-                        <h1>5th March 2023</h1>
+                        <div className="user-reg">
+                            <div className="date-reg">
+                            <h1>5th March 2023</h1>
+                        </div>
+
+                        <div className="reg-details">
+                            <div className="reg-detail">
+                                <div className="detail-name">Grace Mwai</div>
+                                <div className="detail-email">gracemwai444@haba.co.ke</div>
+                            </div>
+
+                            <div className="view">
+                                <img src={user} alt="" />
+                            </div>
+                        </div>
+
+                        <div className="reg-details">
+                            <div className="reg-detail">
+                                <div className="detail-name">Bola Tinubu</div>
+                                <div className="detail-email">bolatinubu00@outlook.com</div>
+                            </div>
+
+                            <div className="view">
+                                <img src={user} alt="" />
+                            </div>
+                        </div>
+
+                        <div className="reg-details">
+                            <div className="reg-detail">
+                                <div className="detail-name">Nancy Wajacoki</div>
+                                <div className="detail-email">nancywajacoki22@yahoo.com</div>
+                            </div>
+
+                            <div className="view">
+                                <img src={user} alt="" />
+                            </div>
+                        </div>
+
+                        <div className="reg-details">
+                            <div className="reg-detail">
+                                <div className="detail-name">Peter Obi</div>
+                                <div className="detail-email">obidientpeter@state.ng</div>
+                            </div>
+
+                            <div className="view">
+                                <img src={user} alt="" />
+                            </div>
+                        </div>
+
+                            <div className="reg-details">
+                                <div className="reg-detail">
+                                    <div className="detail-name">Client Mwilu</div>
+                                    <div className="detail-email">clientmwilu@gmail.com</div>
+                                </div>
+
+                                <div className="view">
+                                    <img src={user} alt="" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div className="reg-details">
-                        <div className="reg-detail">
-                            <div className="detail-name">Grace Mwai</div>
-                            <div className="detail-email">gracemwai444@haba.co.ke</div>
-                        </div>
-
-                        <div className="view">
-                            <img src={user} alt="" />
-                        </div>
-                    </div>
-
-                    <div className="reg-details">
-                        <div className="reg-detail">
-                            <div className="detail-name">Bola Tinubu</div>
-                            <div className="detail-email">bolatinubu00@outlook.com</div>
-                        </div>
-
-                        <div className="view">
-                            <img src={user} alt="" />
-                        </div>
-                    </div>
-
-                    <div className="reg-details">
-                        <div className="reg-detail">
-                            <div className="detail-name">Nancy Wajacoki</div>
-                            <div className="detail-email">nancywajacoki22@yahoo.com</div>
-                        </div>
-
-                        <div className="view">
-                            <img src={user} alt="" />
-                        </div>
-                    </div>
-
-                    <div className="reg-details">
-                        <div className="reg-detail">
-                            <div className="detail-name">Peter Obi</div>
-                            <div className="detail-email">obidientpeter@state.ng</div>
-                        </div>
-
-                        <div className="view">
-                            <img src={user} alt="" />
-                        </div>
-                    </div>
-
-                    <div className="reg-details">
-                        <div className="reg-detail">
-                            <div className="detail-name">Client Mwilu</div>
-                            <div className="detail-email">clientmwilu@gmail.com</div>
-                        </div>
-
-                        <div className="view">
-                            <img src={user} alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
                 </div>
             </div>
         </div>

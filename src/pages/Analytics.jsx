@@ -4,6 +4,7 @@ import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
 import HabaChart from '../Components/HabaChart';
 import map from '../assets/map.png';
+import stats from '../assets/stats.png';
 
 const Analytics = () => {
     return (
@@ -76,6 +77,24 @@ const Analytics = () => {
                         </div>
 
                         <div className="region-stats">
+                            <div className="county-analytics">
+                                <img src={stats} alt="" />
+                                <div className="county-analytic">
+                                    <h2>Nakuru</h2>
+                                    <div className="county-stats">
+                                        <div className="county-users">
+                                            <h2>Users</h2>
+                                            <p>1575</p>
+                                        </div>
+
+                                        <div className="users-worth">
+                                            <h2>Worth</h2>
+                                            <p>Ksh 43,754</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div className="map-stats">
                                 <div className="map">
                                     <img src={map} alt="map" />
