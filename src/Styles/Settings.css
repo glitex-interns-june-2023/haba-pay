@@ -278,3 +278,170 @@
     font-weight: 400;
     padding-left: 10px;
 }
+
+.adminmanage-devices {
+    width: 1075px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid #DED9D9;
+    background: #FFFEFD;
+    margin-left: 10px;
+}
+
+.manage-devices {
+    display: inline-flex;
+    align-items: center;
+    gap: 654px;
+}
+
+.devices-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.logged-devices {
+    display: flex;
+    padding: 4px 10px;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #323232;
+}
+
+.logged-devices h2 {
+    color: var(--black, #323232);
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.userlogged-devices {
+    display: inline-flex;
+    align-items: center;
+    width: 1075px;
+    height: 48px;
+    border: 0.5px solid #DED9D9;
+    background: #FFF7E8;
+}
+
+.device-checkbox {
+    margin-left: 30px;
+}
+
+.logged-browser h2,
+.logged-device h2,
+.device-location h2,
+.user-lastseen h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 700;
+} 
+
+.loggeddevices-details {
+    display: inline-flex;
+    align-items: center;
+    width: 1075px;
+    height: 60px;
+    border: 0.5px solid #FFF7E8;
+}
+
+.logged-browser h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+} 
+
+.logged-browser h2, 
+.logged-browser h3 {
+    margin-left: 50px;
+}
+
+.logged-device h2 {
+    margin-left: 150px;
+}
+
+.logged-device1 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 65px;
+}
+
+.logged-device2 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 55px;
+}
+
+.logged-device3 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 75px;
+}
+
+.device-location h2 {
+    margin-left: 150px;
+}
+
+.device-location1 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 95px;
+}
+
+.device-location2 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 75px;
+}
+
+.device-location3 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 65px;
+}
+
+.user-lastseen h2 {
+    margin-left: 250px;
+}
+
+.user-lastseen1 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 110px;
+}
+
+.user-lastseen2 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 80px;
+}
+
+.user-lastseen3 h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 156px;
+}

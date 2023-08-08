@@ -184,6 +184,113 @@ const Settings = () => {
                         </div>
                     </div>
 
+                    <div className="adminmanage-devices">
+                        <div className="manage-devices">
+                            <div className="devices-title">
+                                <h2>Manage Devices</h2>
+                            </div>
+
+                            <div className="logged-devices">
+                                <h2>Logout of selected devices</h2>
+                            </div>
+                        </div>
+
+                        <div className="userlogged-devices">
+                            <div className="device-checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M2 18C1.45 18 0.979002 17.804 0.587002 17.412C0.195002 17.02 -0.000664969 16.5493 1.69779e-06 16V2C1.69779e-06 1.45 0.196002 0.979002 0.588002 0.587002C0.980002 0.195002 1.45067 -0.000664969 2 1.69779e-06H16C16.55 1.69779e-06 17.021 0.196002 17.413 0.588002C17.805 0.980002 18.0007 1.45067 18 2V16C18 16.55 17.804 17.021 17.412 17.413C17.02 17.805 16.5493 18.0007 16 18H2ZM2 16H16V2H2V16Z" fill="#898989"/>
+                                </svg>
+                            </div>
+
+                            <div className="logged-browser">
+                                <h2>Browser</h2>
+                            </div>
+
+                            <div className="logged-device">
+                                <h2>Device</h2>
+                            </div>
+
+                            <div className="device-location">
+                                <h2>Location</h2>
+                            </div>
+
+                            <div className="user-lastseen">
+                                <h2>Last Seen</h2>
+                            </div>
+                        </div>
+
+                        <div className="loggeddevices-details">
+                            <div className="device-checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M2 18C1.45 18 0.979002 17.804 0.587002 17.412C0.195002 17.02 -0.000664969 16.5493 1.69779e-06 16V2C1.69779e-06 1.45 0.196002 0.979002 0.588002 0.587002C0.980002 0.195002 1.45067 -0.000664969 2 1.69779e-06H16C16.55 1.69779e-06 17.021 0.196002 17.413 0.588002C17.805 0.980002 18.0007 1.45067 18 2V16C18 16.55 17.804 17.021 17.412 17.413C17.02 17.805 16.5493 18.0007 16 18H2ZM2 16H16V2H2V16Z" fill="#898989"/>
+                                </svg>
+                            </div>
+
+                            <div className="logged-browser">
+                                <h3>Chrome on Android</h3>
+                            </div>
+
+                            <div className="logged-device1">
+                                <h3>Samsung A51</h3>
+                            </div>
+
+                            <div className="device-location1">
+                                <h3>Kangemi in Nairobi, Kenya</h3>
+                            </div>
+
+                            <div className="user-lastseen1">
+                                <h3>Online</h3>
+                            </div>
+                        </div>
+
+                        <div className="loggeddevices-details">
+                            <div className="device-checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M2 18C1.45 18 0.979002 17.804 0.587002 17.412C0.195002 17.02 -0.000664969 16.5493 1.69779e-06 16V2C1.69779e-06 1.45 0.196002 0.979002 0.588002 0.587002C0.980002 0.195002 1.45067 -0.000664969 2 1.69779e-06H16C16.55 1.69779e-06 17.021 0.196002 17.413 0.588002C17.805 0.980002 18.0007 1.45067 18 2V16C18 16.55 17.804 17.021 17.412 17.413C17.02 17.805 16.5493 18.0007 16 18H2ZM2 16H16V2H2V16Z" fill="#898989"/>
+                                </svg>
+                            </div>
+
+                            <div className="logged-browser">
+                                <h3>Chrome on Windows</h3>
+                            </div>
+
+                            <div className="logged-device2">
+                                <h3>HP Folio 9480m</h3>
+                            </div>
+
+                            <div className="device-location2">
+                                <h3>Machakos in Machakos, Kenya</h3>
+                            </div>
+
+                            <div className="user-lastseen2">
+                                <h3>4 hours ago</h3>
+                            </div>
+                        </div>
+
+                        <div className="loggeddevices-details">
+                            <div className="device-checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M2 18C1.45 18 0.979002 17.804 0.587002 17.412C0.195002 17.02 -0.000664969 16.5493 1.69779e-06 16V2C1.69779e-06 1.45 0.196002 0.979002 0.588002 0.587002C0.980002 0.195002 1.45067 -0.000664969 2 1.69779e-06H16C16.55 1.69779e-06 17.021 0.196002 17.413 0.588002C17.805 0.980002 18.0007 1.45067 18 2V16C18 16.55 17.804 17.021 17.412 17.413C17.02 17.805 16.5493 18.0007 16 18H2ZM2 16H16V2H2V16Z" fill="#898989"/>
+                                </svg>
+                            </div>
+
+                            <div className="logged-browser">
+                                <h3>Avast on Windows</h3>
+                            </div>
+
+                            <div className="logged-device3">
+                                <h3>Lenovo Yoga 370</h3>
+                            </div>
+
+                            <div className="device-location3">
+                                <h3>Ruiru in Thika, Kenya</h3>
+                            </div>
+
+                            <div className="user-lastseen3">
+                                <h3>4 Feb 2023</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

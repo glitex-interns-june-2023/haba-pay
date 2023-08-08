@@ -207,6 +207,32 @@
     margin-left: 18px;
 }
 
+.adminacc-actions {
+    display: flex;
+    height: 295px;
+    padding: 10px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.edit-userprofile,
+.suspend-userprofile,
+.delete-userprofile {
+    display: flex;
+    width: 348px;
+    align-items: center;
+    gap: 10px;
+    margin-left: 25px;
+}
+
+.userprofile-action h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 .profile-activities {
     width: 696px;
     height: 352px;
