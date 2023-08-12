@@ -225,26 +225,12 @@
     padding-left: 620px;
 }
 
-.check-browser {
-    display: flex;
-    flex-direction: column;
-    padding-left: 650px;
-    gap: 48px;
-}
-
 .notification-email h3 {
     color: #323232;
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 600;
     padding-left: 120px;
-}
-
-.check-email {
-    display: flex;
-    flex-direction: column;
-    padding-left: 135px;
-    gap: 48px;
 }
 
 .notification-text h3 {
@@ -255,20 +241,17 @@
     padding-left: 120px;
 }
 
-.check-type {
+.notification-details {
     display: flex;
     flex-direction: column;
-    padding-left: 130px;
-    gap: 48px;
 }
 
-.habapay-notification {
+.habapay-notifications {
+    display: inline-flex;
+    align-items: center;
     width: 1075px;
     height: 60px;
-    flex-shrink: 0;
     border: 0.5px solid #FFF7E8;
-    display: flex;
-    flex-direction: row;
 }
 
 .habapay-notification h2 {
@@ -277,6 +260,34 @@
     font-size: 18px;
     font-weight: 400;
     padding-left: 10px;
+}
+
+.checkbox-notification .check-browser {
+    padding-left: 370px;
+}
+
+.checkbox-notification .check-browser1 {
+    padding-left: 330px;
+}
+
+.checkbox-notification .check-browser2 {
+    padding-left: 460px;
+}
+
+.checkbox-notification .check-browser3 {
+    padding-left: 390px;
+}
+
+.checkbox-notification .check-browser4 {
+    padding-left: 461px;;
+}
+
+.checkbox-notification .check-email {
+    padding-left: 160px;
+}
+
+.checkbox-notification .check-text {
+    padding-left: 148px;
 }
 
 .adminmanage-devices {
@@ -363,7 +374,7 @@
 }
 
 .logged-device h2 {
-    margin-left: 150px;
+    padding-left: 170px;
 }
 
 .logged-device1 h3 {
@@ -371,7 +382,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 65px;
+    padding-left: 85px;
 }
 
 .logged-device2 h3 {
@@ -379,7 +390,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 55px;
+    padding-left: 75px;
 }
 
 .logged-device3 h3 {
@@ -387,11 +398,11 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 75px;
+    padding-left: 95px;
 }
 
 .device-location h2 {
-    margin-left: 150px;
+    padding-left: 180px;
 }
 
 .device-location1 h3 {
@@ -399,7 +410,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 95px;
+    padding-left: 125px;
 }
 
 .device-location2 h3 {
@@ -407,7 +418,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 75px;
+    padding-left: 105px;
 }
 
 .device-location3 h3 {
@@ -415,11 +426,11 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 65px;
+    padding-left: 95px;
 }
 
 .user-lastseen h2 {
-    margin-left: 250px;
+    padding-left: 270px;
 }
 
 .user-lastseen1 h3 {
@@ -427,7 +438,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 110px;
+    padding-left: 130px;
 }
 
 .user-lastseen2 h3 {
@@ -435,7 +446,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 80px;
+    padding-left: 100px;
 }
 
 .user-lastseen3 h3 {
@@ -443,5 +454,5 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 156px;
+    padding-left: 176px;
 }

@@ -133,23 +133,276 @@
     margin-left: 6px;
 }
 
-.map {
-    padding: 85px 70px;
+.map-stats .zoom-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    gap: 10px;
 }
 
-.county-analytics {
-    position: relative;
+.zoom-map {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.zoom-map .blank-space {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #FFFEFD;
+    cursor: pointer;
+}
+
+.zoom-map .zoom-out,
+.zoom-map .zoom-in {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: #FFFEFD;
+    cursor: pointer;
+}
+
+.map {
+    margin-top: -120px;
+    padding: 85px 70px;
+    cursor: pointer;
 }
 
 .county-analytics img {
     position: relative;
+    top: -350px;
+    left: 50px;
+    cursor: pointer;
 }
 
-.county-analytic {
-    
+.county-content {
+    position: relative;
+    top: -485px;
+    left: 80px;
+    cursor: pointer;
+}
+
+.county-content h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.county-line {
+    width: 160px;
+    height: 0.5px;
+    background: #DED9D9;
+    margin-top: -10px;
 }
 
 .county-stats {
     display: flex;
-    
+    flex-direction: row;
+    gap: 15px;
+}
+
+.county-users h3,
+.users-worth h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: -2px;
+}
+
+.county-users p,
+.users-worth p {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -9px;
+}
+
+.number-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: -380px -60px;
+}
+
+.number-stats div {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.number-stats svg {
+    width: 20px;
+    height: 20px;
+}
+
+.number-stats span {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.nationalusers-stats {
+    padding-top: 400px;
+}
+
+.total-nationalreach {
+    gap: 10px;
+    margin: -10px -70px;
+    padding-left: 10px;
+}
+
+.total-nationalreach h2,
+.total-nationalusers h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 17px;
+    font-weight: 400; 
+}
+
+.total-nationalreach h3,
+.total-nationalusers h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 400; 
+}
+
+.total-nationalusers {
+    margin: -65px 205px;
+}
+
+.analytics-recentactivities {
+    width: 1091px;
+    height: 487px;
+    border-radius: 5px;
+    margin: -110px 40px;
+    border: 0.5px solid #DED9D9;
+}
+
+.recentactivities-header {
+    display: inline-flex;
+    margin-top: -8px;
+    gap: 800px;
+}
+
+.recentactivities-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.recentactivities-filter {
+    height: 25px;
+    width: 75px;
+    display: inline-flex;
+    padding: 4px 10px;
+    margin-top: 15px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 1px solid #FDAC15;
+}
+
+.recentactivities-filter h3 {
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.recentactivities-filter span svg {
+    width: 24px;
+    height: 24px;
+    padding-left: 5px;
+}
+
+.useranalytics-content {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    margin-top: -28px;
+}
+
+.useractivity-name,
+.useractivity-balance,
+.useractivity-transaction,
+.useractivity-launch,
+.useractivity-status,
+.useractivity-manage {
+    display: flex;
+    flex-direction: column;
+}
+
+.useractivityname-title h2,
+.useractivitybal-title h2,
+.useractivitytransaction-title h2,
+.useractivitylaunch-title h2,
+.useractivitystatus-title h2,
+.useractivitymanage-title h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.useractivitybal-title,
+.useractivitytransaction-title,
+.useractivitylaunch-title,
+.useractivitystatus-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.useractivitybal-title span svg,
+.useractivitytransaction-title span svg,
+.useractivitylaunch-title span svg,
+.useractivitystatus-title span svg {
+    padding-top: 8px;
+    padding-left: 5px;
+}
+
+.useractivities-analytics {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 18px;
+    color: #323232;  
+}
+
+.useractivities-analytics h3 {
+    font-family: IBM Plex Sans;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.useractivities-analytics svg {
+    width: 56px;
+    height: 24px;
+    margin-top: -1.5px;
+}
+
+.useractivity-balance {
+    padding-left: 100px;
+}
+
+.useractivity-transaction,
+.useractivity-launch,
+.useractivity-transaction,
+.useractivity-status,
+.useractivity-manage {
+    padding-left: 80px;
 }

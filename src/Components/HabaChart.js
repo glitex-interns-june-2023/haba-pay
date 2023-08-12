@@ -66,27 +66,22 @@ const HabaChart = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
         <div className="new-users" style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
-          <div
-            style={{
-              width: '10px',
-              height: '10px',
-              backgroundColor: '#FDAC15',
-              marginRight: '5px',
-              borderRadius: '50%',
-            }}
-          />
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#FDAC15"/>
+              <circle cx="10" cy="10" r="6.25" fill="#FDAC15"/>
+            </svg>
+          </div>
           New Users
         </div>
+        
         <div className="national-reach" style={{ display: 'flex', alignItems: 'center' }}>
-          <div
-            style={{
-              width: '10px',
-              height: '10px',
-              backgroundColor: '#323232',
-              marginRight: '5px',
-              borderRadius: '50%',
-            }}
-          />
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#323232"/>
+                <circle cx="10" cy="10" r="6.25" fill="#323232"/>
+              </svg>
+          </div>
           National Reach
         </div>
       </div>
