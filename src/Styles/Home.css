@@ -1,11 +1,13 @@
 .home-container {
     display: flex;
     min-height: 100vh;
+    margin: 0;
 }
   
 .LeftSidebar {
     flex: 0 0 100px;
 }
+
   
 .Navbar {
     flex: 1;
