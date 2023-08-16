@@ -12,15 +12,16 @@ const SplashScreen = () => {
 
   return (
     <div className="app-container">
-        <div className="app-title">
-            <h1>HabaPay</h1>
-        </div>
-        <div className="content">
-            <h2>Welcome back</h2>
-            <p>Sign in to proceed into your account</p>
-            <img className="logo" src={logo} alt="HabaPay logo" />
-            <button className="sign-in" onClick={handleSignInButtonClick}>Sign in</button>
-        </div>
+      <div className="app-title">
+        <h1>HabaPay</h1>
+      </div>
+
+      <div className="content">
+        <h1>Welcome back</h1>
+        <p>Sign in to proceed into your account</p>
+        <img className="logo" src={logo} alt="logo" />
+        <button className="sign-in" onClick={handleSignInButtonClick}>Sign in</button>
+      </div>
     </div>
   );
 };
