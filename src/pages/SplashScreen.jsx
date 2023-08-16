@@ -17,7 +17,7 @@ const SplashScreen = () => {
       </div>
 
       <div className="content">
-        <h1>Welcome back</h1>
+        <h2>Welcome back</h2>
         <p>Sign in to proceed into your account</p>
         <img className="logo" src={logo} alt="logo" />
         <button className="sign-in" onClick={handleSignInButtonClick}>Sign in</button>

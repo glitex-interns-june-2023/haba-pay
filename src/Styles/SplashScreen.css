@@ -66,6 +66,7 @@
     .app-title h2 {
         font-size: 25px;
         padding: 0;
+        margin-left: 0;
     }
 
     .content {
@@ -73,6 +74,10 @@
       height: auto;
       padding: 20px;
       margin-top: 10px;
+    }
+
+    .content h1 {
+        font-size: 22px;
     }
 
     .content img {
