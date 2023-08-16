@@ -1,0 +1,82 @@
+.login-container {
+    overflow: hidden;
+}
+
+.title h2 {
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 32px;
+    font-family: IBM Plex Sans;
+    color: #323232;
+}
+
+.login-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 350px;
+    height: 480px;
+    background: #FFFEFD;
+    border: 0.5px solid #DED9D9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+}
+
+.login-title h2 {
+    padding-top: 2.5rem;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: IBM Plex Sans;
+}
+
+.login-content label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+}
+
+.login-content label:first-child {
+    padding-top: 1.5rem;
+}
+
+.login-content input {
+    width: 310px;
+    height: 40px;
+    border: 1px solid #DED9D9;
+    border-radius: 5px;
+}
+
+.login-btn, .reset-btn, .send-otp button {
+    height: 43px;
+    width: 240px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background: #FDAC15;
+    color: #FFFEFD;
+    align-items: center;
+    margin-top: 28px;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+}
+
+.forgot-pwd {
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 500;
+    margin-right: 11rem;
+    text-decoration: none;
+    color: #323232;
+    padding-top: 1.8rem;
+}

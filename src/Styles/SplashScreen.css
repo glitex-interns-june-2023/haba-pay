@@ -1,0 +1,59 @@
+.app-title h1 {
+    margin-left: 50px;
+    font-weight: 500;
+    font-size: 32px;
+    font-family: IBM Plex Sans;
+    color: #323232;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 350px;
+    height: 480px;
+    background: #FFFEFD;
+    border: 0.5px solid #DED9D9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+}
+
+.content h2 {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: IBM Plex Sans;
+}
+
+.content p {
+    text-align: center;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    color: #323232;
+    margin-top: 2px;
+}
+
+.sign-in {
+    height: 43px;
+    width: 240px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background: #FDAC15;
+    color: #FFFEFD;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    gap: 10px;
+}
+
+

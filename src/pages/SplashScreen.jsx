@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-import '../index.css'
+import '../Styles/SplashScreen.css';
 
 const SplashScreen = () => {
   const navigate = useNavigate();
@@ -12,15 +12,15 @@ const SplashScreen = () => {
 
   return (
     <div className="app-container">
-      <div className="app-title">
-        <h1>HabaPay</h1>
-      </div>
-      <div className="content">
-        <h2>Welcome back</h2>
-        <p>Sign in to proceed into your account</p>
-        <img className="logo" src={logo} alt="HabaPay logo" />
-        <button className="sign-in" onClick={handleSignInButtonClick}>Sign in</button>
-      </div>
+        <div className="app-title">
+            <h1>HabaPay</h1>
+        </div>
+        <div className="content">
+            <h2>Welcome back</h2>
+            <p>Sign in to proceed into your account</p>
+            <img className="logo" src={logo} alt="HabaPay logo" />
+            <button className="sign-in" onClick={handleSignInButtonClick}>Sign in</button>
+        </div>
     </div>
   );
 };
