@@ -66,7 +66,7 @@
     .app-title h2 {
         font-size: 25px;
         padding: 0;
-        margin-left: 0;
+        margin-right: 50px;
     }
 
     .content {
@@ -78,6 +78,7 @@
 
     .content h1 {
         font-size: 22px;
+        margin-top: -5px;
     }
 
     .content img {
