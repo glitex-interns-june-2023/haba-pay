@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../Styles/Login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -50,7 +51,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <div className="title">
         <h2>HabaPay</h2>
       </div>
