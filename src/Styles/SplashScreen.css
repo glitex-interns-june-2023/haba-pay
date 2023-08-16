@@ -5,7 +5,7 @@
 }
 
 .app-title h1 {
-    margin-left: 50px;
+    padding-left: 50px;
     font-weight: 500;
     font-size: 32px;
     font-family: IBM Plex Sans;
@@ -66,17 +66,17 @@
     .app-title h2 {
         font-size: 25px;
         padding: 0;
-        margin-right: 50px;
     }
 
     .content {
       width: 70%;
       height: auto;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
     }
 
     .content h1 {
         font-size: 22px;
+        padding-top: 0;
     }
 
     .content img {
