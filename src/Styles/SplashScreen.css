@@ -63,9 +63,20 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .app-title h2 {
+        font-size: 25px;
+        padding: 0;
+    }
+
     .content {
       width: 70%;
       height: auto;
       padding: 20px;
+    }
+
+    .content .logo {
+        width: 273px;
+        height: 187px;
     }
 }
