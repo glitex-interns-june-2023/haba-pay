@@ -166,3 +166,7 @@ span .client {
     height: 12px;
     padding-left: 3px;
 }
+
+@media screen and (min-width: 1024px) {
+    
+}

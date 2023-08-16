@@ -10,7 +10,7 @@ import HabaChart from '../Components/HabaChart';
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="home-container">
      <LeftSidebar />
 
      <div className="transaction-content">
