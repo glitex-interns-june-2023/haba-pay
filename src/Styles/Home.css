@@ -40,7 +40,7 @@
 .stats .title {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     text-align: left;
     padding-left: 30px;
@@ -66,7 +66,7 @@
 .chart-filter h2 {
     color: #FFFEFD;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
     padding-left: 10px
 }
@@ -101,7 +101,6 @@
 .recent-activity {
     width: 660px;
     height: 430px;
-    flex-shrink: 0;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
     margin: 60px 20px;
@@ -111,7 +110,7 @@
 .recent-activity h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -133,14 +132,14 @@
 .user {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
 }
 
 .user span {
     color: var(--black, #323232);
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
 }
 
@@ -158,7 +157,7 @@ span .client {
 .review {
     color: #898989;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
     padding-right: 20px;
 }
@@ -168,4 +167,3 @@ span .client {
     height: 12px;
     padding-left: 3px;
 }
-
