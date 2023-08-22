@@ -24,7 +24,7 @@
 
 .transaction-stat {
     margin-top: 20px;
-    width: 680px;
+    width: 660px;
     height: 481px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
@@ -99,7 +99,7 @@
 }
 
 .recent-activity {
-    width: 660px;
+    width: 640px;
     height: 430px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
@@ -116,7 +116,7 @@
 
 .activity {
     display: flex;
-    width: 652px;
+    width: 632px;
     justify-content: space-between;
     align-items: center;
     padding-top: 3px;
