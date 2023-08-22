@@ -10,7 +10,7 @@
 .transaction h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     padding-left: 10px;
 }
@@ -35,7 +35,7 @@
     background: #FDAC15;
     color: #FFFEFD;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: normal;
 }
@@ -49,7 +49,7 @@
     border: 1px solid #FDAC15;
     color: #FDAC15;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: normal;
 }
@@ -118,14 +118,14 @@
 .name {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .admin-number {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     padding-top: 12px;
 }
@@ -140,14 +140,14 @@
 .status-details .amount {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .status-details .time {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     padding-top: 12px;
 }
@@ -173,14 +173,14 @@
 .details-title {
     color: var(--black, #323232);
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .user-view{
     color: #898989;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -201,7 +201,7 @@
 .date-reg h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -216,19 +216,19 @@
 .detail-name {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .detail-email {
     color: #898989;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 }
 
 .view img {
     display: flex;
     align-items: flex-end;
-    padding-left: 20px;
+    padding: 10px 10px;
 }
