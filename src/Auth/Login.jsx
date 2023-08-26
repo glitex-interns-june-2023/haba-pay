@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import '../Styles/Login.css';
 
 function Login() {
@@ -7,6 +8,10 @@ function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -51,7 +56,7 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
+    <div className={`login-container ${isDesktop ? 'desktop' : isTablet ? 'tablet' : 'mobile'}`}>
       <div className="title">
         <h2>HabaPay</h2>
       </div>
@@ -70,9 +75,9 @@ function Login() {
             <input type="password" id="password" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
-          <button className="login-btn" type="submit" disabled={loading}>
+          <button className={`login-btn ${isMobile ? 'mobile-login' : ''}`} type="submit" disabled={loading}>
             {loading ? 'Processing...' : 'Log In'}
-          </button>
+        </button>
         </form>
 
         <Link to="/reset-password" className="forgot-pwd">
