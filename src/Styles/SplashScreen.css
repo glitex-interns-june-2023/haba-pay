@@ -62,25 +62,3 @@
     gap: 10px;
 }
 
-@media screen and (max-width: 768px) {
-    .app-title h2 {
-        font-size: 25px;
-        padding: 0;
-    }
-
-    .content {
-      width: 70%;
-      height: auto;
-      padding: 0 20px 20px 20px;
-    }
-
-    .content h1 {
-        font-size: 22px;
-        padding-top: 0;
-    }
-
-    .content img {
-        width: 273px;
-        height: 187px;
-    }
-}
