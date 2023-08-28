@@ -39,7 +39,8 @@
 }
 
 .personal-details h3,
-.account-suspenddetails h3 {
+.account-suspenddetails h3,
+.suspend-action-details h3 {
     color: #323232;
     font-family: IBM Plex Sans;
     font-size: 18px;
