@@ -6,7 +6,6 @@ import Navbar from '../Components/Navbar';
 import '../Styles/ManageUsers.css';
 import filter from '../assets/filter.png';
 import forwardreview from '../assets/forwardreview.png';
-import uncheck from '../assets/uncheck.png';
 import manage from '../assets/manage.png';
 import activity from '../assets/activity.png';
 import review from '../assets/review.png';
@@ -15,6 +14,8 @@ import user from '../assets/user.png';
 const ManageUsers = () => {
     const [isQuickActionsOpen, setIsQuickActionsOpen] = useState(false);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [selectedUsers, setSelectedUsers] = useState([]);
 
     const toggleQuickActions = () => {
         setIsQuickActionsOpen((prev) => !prev);
@@ -45,28 +46,21 @@ const ManageUsers = () => {
     const [suspendedUsers, setSuspendedUsers] = useState([]);
 
     const handleCreateUser = () => {
-        // Placeholder function for "Create User" action
-        // Implement your logic for creating a user here
-        // For example, you can navigate to the create user page
         navigate('/create-account');
     };
 
     const handleDeleteUser = () => {
-        // Placeholder function for "Delete User" action
-        // Implement your logic for deleting a user here
         navigate('/delete-account')
     };
 
     const handleSuspendUser = () => {
-        // Placeholder function for "Suspend User" action
-        // Implement your logic for suspending a user here
         navigate('/suspend-account')
     };
 
     const handleRestoreUser = (userEmail) => {
         // Placeholder function for "Restore User" action
-        // Implement your logic to restore the user with the given email
-        // For demonstration purposes, let's assume you have a list of suspendedUsers
+        // Implement logic to restore the user with the given email
+        // For instance, you have a list of suspendedUsers
         // and you want to restore the user with the given userEmail
 
         // Find the user with the provided email in the suspendedUsers list
@@ -92,6 +86,18 @@ const ManageUsers = () => {
           throw new Error('Failed to fetch users from the API.');
         }
       }; */
+
+    const handleCheckboxChange = (event, userName) => {
+        if (event.target.checked) {
+            setSelectedUsers([...selectedUsers, userName]);
+        } else {
+            setSelectedUsers(selectedUsers.filter(user => user !== userName));
+        }
+    };
+
+    const handleUserClick = (userName) => {
+        setSelectedUser(userName);
+    };
 
 
     return (
@@ -151,8 +157,8 @@ const ManageUsers = () => {
                                 )}
                                 <svg
                                     onClick={(e) => {
-                                        e.stopPropagation(); // Prevent the click event from bubbling to the parent div
-                                        toggleQuickActions(); // Trigger the toggleQuickActions function
+                                        e.stopPropagation();
+                                        toggleQuickActions(); 
                                     }}
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -170,8 +176,8 @@ const ManageUsers = () => {
                                 <h6>Filter</h6>
                                 <img
                                     onClick={(e) => {
-                                        e.stopPropagation(); // Prevent the click event from bubbling to the parent div
-                                        toggleFilter(); // Trigger the toggleFilter function
+                                        e.stopPropagation(); 
+                                        toggleFilter(); 
                                     }}
                                     src={filter}
                                     alt=""
@@ -211,25 +217,58 @@ const ManageUsers = () => {
 
                     <div className="users-data">
                         <div className="data-uncheck">
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
-                            <img src={uncheck} alt="" />
+                            <label className="checkbox-label header">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+                            
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" onChange={(event) => handleCheckboxChange(event, "John Doe")} />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
+
+                            <label className="checkbox-label">
+                                <input type="checkbox" className="checkbox-input" />
+                            </label>
                         </div>
+
 
                         <div className="data-name">
                             <div className="header-name">Name</div>
                             <div className="names">Grace Mwai</div>
                             <div className="names">Peter Obi</div>
                             <div className="names">Brian Nakamoto</div>
-                            <div className="names">John Doe</div>
+                            <div className="names" onClick={() => handleUserClick("John Doe")}>John Doe</div>
                             <div className="names">Chris Kiribi</div>
                             <div className="names">Jacqueline Rop</div>
                             <div className="names">Chris Mganda</div>
@@ -315,12 +354,97 @@ const ManageUsers = () => {
                         <h1>User Activity</h1>
                         <div className="activity-img">
                             <img src={activity} alt="activity" />
-                            <h2>You haven't selected any user </h2>
+                            {selectedUser ? (
+                                <h2>Activities of {selectedUser}</h2>
+                            ) : selectedUsers.length > 0 ? (
+                            <h2>Activities of Selected Users</h2>
+                            ) : (
+                            <h2>You haven't selected any users</h2>
+                            )}
                         </div>
                         <div className="activity-desc">
-                            <p>Please select a user from the table above or using search
-                            to view their activity here</p>
-                        </div>
+                        {selectedUser ? (
+                            <div className="manage-user-activities">
+                                <div className="useractivity-title">
+                                    <h1>User Activity</h1>
+                                </div>
+    
+                                <div className="user-activitylog">
+                                    <div className="user-duration">
+                                        Duration 
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M7 10L12 15L17 10H7Z" fill="#FDAC15"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+    
+                                    <div className="user-transaction">
+                                        Transaction
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M7 10L12 15L17 10H7Z" fill="#FDAC15"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+    
+                                    <div className="activity-navigation">
+                                        <img className="forward-review" src={forwardreview} alt="" />
+                                        <span>1 of 3</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="21" viewBox="0 0 13 21" fill="none">
+                                            <path d="M2.55005 0.5L12.55 10.5L2.55005 20.5L0.775049 18.725L9.00005 10.5L0.775049 2.275L2.55005 0.5Z" fill="#898989"/>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+                                <div className="transaction-activity">
+                                    <div className="activity">
+                                        <div className="recent">
+                                            <div className="user">John Doe <span>withdrew Ksh 50</span></div>
+                                            <div className="time">1 March 2023, 01:07PM</div>
+                                        </div>
+                                        <div className="review">Review <img src={review} alt="" /></div>
+                                    </div>
+    
+                                    <div className="activity">
+                                        <div className="recent">
+                                            <div className="user">John Doe <span>withdrew Ksh 240</span></div>
+                                            <div className="time">26 Feb 2023, 12:45PM</div>
+                                        </div>
+                                        <div className="review">Review <img src={review} alt="" /></div>
+                                    </div>
+    
+                                    <div className="activity">
+                                        <div className="recent">
+                                            <div className="user">John Doe <span>sent Ksh 110 to <span className="client">Chris Kiribi</span></span></div>
+                                            <div className="time">24 Feb 2023, 12:00PM</div>
+                                        </div>
+                                        <div className="review">Review <img src={review} alt="" /></div>
+                                    </div>
+    
+                                    <div className="activity">
+                                        <div className="recent">
+                                            <div className="user">John Doe <span>deposited Ksh 500 to wallet</span></div>
+                                            <div className="time">24 Feb 2023, 11:55AM</div>
+                                        </div>
+                                        <div className="review">Review <img src={review} alt="" /></div>
+                                    </div>
+    
+                                    <div className="activity">
+                                        <div className="recent">
+                                            <div className="user">John Doe <span>created a HabaPay account</span></div>
+                                            <div className="time">Today, 11:05AM</div>
+                                        </div>
+                                        <div className="review">Review <img src={review} alt="" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            ) : selectedUsers.length > 0 ? (
+                                <p>Display combined activities of selected users here</p>
+                            ) : (
+                                <p>Please select users from the table above or using search to view their activities here</p>
+                            )}
+                        </div> 
                     </div>
 
                     <div className="users-reg">

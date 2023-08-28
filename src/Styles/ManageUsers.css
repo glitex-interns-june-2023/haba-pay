@@ -142,7 +142,7 @@
 
 .quick-actions.open .quick-actions-dropdown,
 .quick-filter.open .filter-dropdown {
-  display: block; /* Show the dropdown content when the corresponding button is clicked */
+  display: block; 
 }
 
 .manage-numbers {
@@ -185,6 +185,36 @@
     margin-top: 5px;
 }
 
+.checkbox-label {
+    display: inline-block;
+    padding-top: 18px; 
+    position: relative; 
+    cursor: pointer;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0; 
+    cursor: pointer;
+}
+
+.checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 17px;
+    height: 17px;
+    border: 3px solid #DED9D9; 
+    background-color: white; 
+    transition: border-color 0.3s; 
+}
+
+.checkbox-label:checked {
+    background-color: #FDAC15; 
+}
+
+
 .data-name {
     display: flex;
     width: 132px;
@@ -194,11 +224,27 @@
     padding-right: 20px;
 }
 
-.data-name .header-name {
+.data-name .header-name,
+.data-number .header-number,
+.data-email .header-email,
+.data-bal .header-bal,
+.data-status .header-status,
+.data-manage .header-manage {
     color: #323232;
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 600;
+}
+
+.data-name .names,
+.data-number .numbers,
+.data-email .emails,
+.data-bal .balance,
+.data-status .status {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .data-number {
@@ -209,26 +255,12 @@
     gap: 19px;
 }
 
-.data-number .header-number {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 18px;
-    font-weight: 600;
-}
-
 .data-email {
     display: flex;
     width: 226px;
     flex-direction: column;
     align-items: flex-start;
     gap: 19px;
-}
-
-.data-email .header-email {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 18px;
-    font-weight: 600;
 }
 
 .data-bal {
@@ -239,20 +271,6 @@
     gap: 19px;
 }
 
-.data-bal .header-bal {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.data-bal .balance {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 16px;
-    font-weight: 400;
-}
-
 .data-status {
     display: flex;
     width: 92px;
@@ -261,26 +279,12 @@
     gap: 19px;
 }
 
-.data-status .header-status {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 18px;
-    font-weight: 600;
-}
-
 .data-manage {
     display: flex;
     width: 67px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16.5px;
-}
-
-.data-manage .header-manage {
-    color: #323232;
-    font-family: IBM Plex Sans;
-    font-size: 18px;
-    font-weight: 600;
 }
 
 .manage-activities {
