@@ -7,6 +7,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(''); 
   const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -15,10 +16,12 @@ function Login() {
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    setErrorMessage(''); 
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    setErrorMessage(''); 
   };
 
   const handleSubmit = async (e) => {
@@ -46,7 +49,7 @@ function Login() {
 
         navigate('/home');
       } else {
-        console.error('Login failed');
+        setErrorMessage('Incorrect username or password'); 
       }
     } catch (error) {
       console.error(error);
@@ -64,6 +67,7 @@ function Login() {
         <div className="login-title">
           <h2>Log in to Account</h2>
         </div>
+        {errorMessage && <div className="error-message">{errorMessage}</div>} 
         <form onSubmit={handleSubmit}>
           <label>
             Email

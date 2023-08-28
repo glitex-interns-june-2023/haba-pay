@@ -56,6 +56,14 @@
     border-radius: 5px;
 }
 
+.error-message {
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    color:#FDAC15;
+    margin-right: 50px;
+
+}
+
 .login-btn, .reset-btn, .send-otp button {
     height: 43px;
     width: 240px;
