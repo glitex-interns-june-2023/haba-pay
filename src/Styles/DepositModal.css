@@ -20,6 +20,45 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
 }
 
+
+/* DepositModal.css */
+.close-btn-container {
+    text-align: right;
+    margin: 10px 10px 0 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: inline-block;
+    transition: transform 300ms ease-in-out;
+}
+
+.close-btn:focus {
+    outline: none;
+}
+
+.close-btn:hover {
+    transform: scale(1.1); 
+}
+
+@keyframes dissolveAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.close-btn.clicked {
+    animation: dissolveAnimation 300ms ease-in-out;
+}
+
+
 .depositmodal-header {
     text-align: center;
 }

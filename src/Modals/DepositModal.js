@@ -1,11 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import deposit from '../assets/deposit.png';
+import close from '../assets/close.png';
 import '../Styles/DepositModal.css';
 
 const DepositModal = () => {
+    const navigate = useNavigate(); 
+
+    const handleButtonClick = () => {
+        navigate('/home');
+    };
+
+
     return (
         <div className="depositmodal-container">
             <div className="depositmodal-wrapper">
+                <div className="close-btn-container">
+                    <button className="close-btn" onClick={handleButtonClick}>
+                        <img src={close} alt="close" />
+                    </button>
+                </div>
+
                 <div className="depositmodal-header">
                     <h1>Transaction Details</h1>
                     <h2><span><img src={deposit} alt="deposit" /></span>Deposit</h2>
