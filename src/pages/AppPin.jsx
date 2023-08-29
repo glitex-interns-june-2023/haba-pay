@@ -15,8 +15,8 @@ const AppPin = () => {
 
   return (
     <div>
-      <h1>App Pin Page</h1>
-      <p>Create a new login pin for the app</p>
+      <h1>App Login Pin</h1>
+      <p>Create a PIN to log in to the app</p>
       <input
         type="password"
         value={loginPin}
