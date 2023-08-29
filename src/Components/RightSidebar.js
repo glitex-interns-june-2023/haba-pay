@@ -1,6 +1,6 @@
 import React from 'react';
-import approved from '../assets/approved.png';
-import pending from '../assets/pending.png';
+import withdrawal from '../assets/withdrawal.png';
+import deposit from '../assets/deposit.png';
 import review from '../assets/review.png';
 import user from '../assets/user.png';
 import '../Styles/RightSidebar.css';
@@ -17,7 +17,7 @@ const RightSidebar = () => {
                     </div>
                     <div className="transaction-details">
                         <div className="transaction-detail">
-                            <img src={approved} alt="" />
+                            <img src={withdrawal} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Jane Mukenya M.</div>
@@ -31,7 +31,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={approved} alt="" />
+                            <img src={withdrawal} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Obi Peter</div>
@@ -45,7 +45,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={pending} alt="" />
+                            <img src={deposit} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Bola Tinubu</div>
@@ -60,7 +60,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={approved} alt="" />
+                            <img src={withdrawal} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">John Doe</div>
@@ -74,7 +74,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={pending} alt="" />
+                            <img src={deposit} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Client Mwilu</div>
@@ -88,7 +88,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={approved} alt="" />
+                            <img src={withdrawal} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Josephine Naruto</div>
@@ -102,7 +102,7 @@ const RightSidebar = () => {
                         </div>
 
                         <div className="transaction-detail">
-                            <img src={pending} alt="" />
+                            <img src={deposit} alt="" />
                             <div className="admin-details">
                                 <div className="admin-detail">
                                     <div className="name">Grace Mwai</div>

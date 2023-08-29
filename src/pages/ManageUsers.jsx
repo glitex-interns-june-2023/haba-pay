@@ -59,22 +59,18 @@ const ManageUsers = () => {
 
     const handleRestoreUser = (userEmail) => {
         // Placeholder function for "Restore User" action
-        // Implement logic to restore the user with the given email
-        // For instance, you have a list of suspendedUsers
-        // and you want to restore the user with the given userEmail
-
-        // Find the user with the provided email in the suspendedUsers list
+        // logic to restore the user with the given email
         const userToRestore = suspendedUsers.find((user) => user.email === userEmail);
 
         if (userToRestore) {
-            // Perform the action to restore the user (e.g., API request to update user status)
+            // Action to restore the user
             // After successful restoration, update the suspendedUsers list
             const updatedSuspendedUsers = suspendedUsers.filter((user) => user.email !== userEmail);
             setSuspendedUsers(updatedSuspendedUsers);
         }
     };
 
-    // Placeholder value for userEmail. Replace this with the actual email of the user you want to restore.
+    // Placeholder value for userEmail.
     const userEmail = "user@example.com";
 
     /* const fetchUsers = async (page) => {
