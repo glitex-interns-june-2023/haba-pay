@@ -39,6 +39,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 600;
+    margin-top: -5px;
 }
 
 .withdrawalmodal-header h2 span img {
@@ -87,7 +88,7 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
-    margin-top: -5px;
+    margin-top: -12px;
 }
 
 .withdrawalmodal-amount,
