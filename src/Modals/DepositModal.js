@@ -1,5 +1,6 @@
 import React from 'react';
 import deposit from '../assets/deposit.png';
+import '../Styles/DepositModal.css';
 
 const DepositModal = () => {
     return (
@@ -18,12 +19,16 @@ const DepositModal = () => {
                             <h4>0712345678</h4>
                         </div>
 
+                        <div className="transaction-line"></div>
+
                         <div className="depositmodal-to">
                             <h2>To</h2>
                             <h3>Jane Mukenya</h3>
                             <h4>0712345678</h4>
                         </div>
                     </div>
+
+                    <div className="transaction-line1"></div>
 
                     <div className="depositmodal-amount">
                         <h2>Amount</h2>
@@ -39,6 +44,8 @@ const DepositModal = () => {
                         <h2>Time</h2>
                         <h3>12:45 PM 5th March 2023</h3>
                     </div>
+
+                    <div className="transaction-line1"></div>
                 </div>
             </div>
         </div>
