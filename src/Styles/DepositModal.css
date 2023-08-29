@@ -1,0 +1,101 @@
+.depositmodal-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background: #FFFEFD; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; 
+}
+
+.depositmodal-wrapper {
+    width: 370px;
+    height: 552px;
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.depositmodal-header {
+    text-align: center;
+}
+
+.depositmodal-header h1 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.depositmodal-header h2 {
+    display: inline-flex;
+    padding: 10px 30px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: -5px;
+}
+
+.depositmodal-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.depositmodal-transaction {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.depositmodal-from h2,
+.depositmodal-to h2,
+.depositmodal-amount h2,
+.transaction-id h2,
+.depositmodal-time h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.depositmodal-from h3,
+.depositmodal-from h4,
+.depositmodal-to h3,
+.depositmodal-to h4,
+.depositmodal-amount h3,
+.transaction-id h3,
+.depositmodal-time h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -12px;
+}
+
+.transaction-line {
+    width: 0.5px;
+    height: 100px;
+    padding-top: 10px;
+    background: #DED9D9;
+}
+
+.transaction-line1 {
+    width: 310px;
+    height: 1px;
+    background: #FFF7E8;
+    margin-top: -8px;
+}
+
+.transaction-id,
+.depositmodal-time {
+    margin-top: -15px;
+}
