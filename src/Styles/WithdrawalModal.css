@@ -1,0 +1,115 @@
+.withdrawalmodal-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background: #FFFEFD; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; 
+}
+
+.withdrawalmodal-wrapper {
+    width: 370px;
+    height: 552px;
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.withdrawalmodal-header {
+    text-align: center;
+}
+
+.withdrawalmodal-header h1 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.withdrawalmodal-header h2 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 20px;
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.withdrawalmodal-header h2 span img {
+    width: 24px;
+    height: 24px;
+}
+
+.withdrawalmodal-line {
+    width: 287px;
+    height: 1px;
+    background: #FFF7E8;
+    margin-left: 50px;
+}
+
+.withdrawalmodal-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-left: 25px;
+}
+
+.withdrawalmodal-request,
+.withdrawalmodal-amount,
+.withdrawalmodal-number,
+.withdrawalmodal-time {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.withdrawalmodal-request h2,
+.withdrawalmodal-amount h2,
+.withdrawalmodal-number h2,
+.withdrawalmodal-time h2 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.withdrawalmodal-request h3,
+.withdrawalmodal-amount h3,
+.withdrawalmodal-number h3,
+.withdrawalmodal-time h3 {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -5px;
+}
+
+.withdrawalmodal-amount,
+.withdrawalmodal-number,
+.withdrawalmodal-time {
+    margin-top: -15px;
+}
+
+.withdrawalmodal-btn {
+    display: flex;
+    width: 240px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-left: 65px;
+    border-radius: 5px;
+    background-color: #FDAC15;
+    border: none;
+    color: #FFFEFD;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+}
