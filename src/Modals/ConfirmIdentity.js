@@ -7,14 +7,13 @@ const ConfirmIdentity = () => {
     const [transactionApproved, setTransactionApproved] = useState(false);
 
     const handleFinishClick = () => {
-        // Simulate processing
+
         setProcessing(true);
 
-        // Simulate API call or processing logic
         setTimeout(() => {
             setProcessing(false);
             setTransactionApproved(true);
-        }, 2000); // Simulating a 2-second processing time
+        }, 2000); 
     };
 
     return (
