@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import withdrawal from '../assets/withdrawal.png';
 import '../Styles/WithdrawalModal.css';
 
@@ -35,7 +36,7 @@ const WithdrawalModal = () => {
                     </div>
                 </div>
 
-                <button className="withdrawalmodal-btn">Approve</button>
+                <Link to="/confirm-identity" className="withdrawalmodal-btn">Approve</Link>
             </div>
         </div>
     );
