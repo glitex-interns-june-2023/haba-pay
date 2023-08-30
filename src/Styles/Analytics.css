@@ -111,7 +111,7 @@
 }
 
 .region-analytics {
-    width: 400px;
+    width: 370px;
     height: 574px;
     margin-left: 30px;
     border-radius: 5px;
@@ -127,7 +127,7 @@
 }
 
 .region-stats {
-    width: 388px;
+    width: 355px;
     height: 429px;
     background: #FFF7E8;
     margin-left: 6px;
@@ -169,22 +169,24 @@
 }
 
 .map {
-    margin-top: -120px;
+    margin: -120px -25px;
     padding: 85px 70px;
     cursor: pointer;
 }
 
 .county-analytics img {
     position: relative;
-    top: -350px;
-    left: 50px;
+    top: -345px;
+    left: 64px;
+    width: 175px;
+    height: 110px;
     cursor: pointer;
 }
 
 .county-content {
     position: relative;
-    top: -485px;
-    left: 80px;
+    top: -465px;
+    left: 88px;
     cursor: pointer;
 }
 
@@ -196,10 +198,10 @@
 }
 
 .county-line {
-    width: 160px;
+    width: 140px;
     height: 0.5px;
     background: #DED9D9;
-    margin-top: -10px;
+    margin-top: -13px;
 }
 
 .county-stats {
@@ -214,7 +216,7 @@
     font-family: IBM Plex Sans;
     font-size: 16px;
     font-weight: 700;
-    margin-top: -2px;
+    margin-top: -1px;
 }
 
 .county-users p,
@@ -223,20 +225,20 @@
     font-family: IBM Plex Sans;
     font-size: 14px;
     font-weight: 400;
-    margin-top: -9px;
+    margin-top: -15px;
 }
 
 .number-stats {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: -380px -60px;
+    margin: -350px -30px;
 }
 
 .number-stats div {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .number-stats svg {
@@ -253,13 +255,13 @@
 }
 
 .nationalusers-stats {
-    padding-top: 400px;
+    padding-top: 370px;
 }
 
 .total-nationalreach {
     gap: 10px;
     margin: -10px -70px;
-    padding-left: 10px;
+    padding-left: 30px;
 }
 
 .total-nationalreach h2,
@@ -276,10 +278,11 @@
     font-family: IBM Plex Sans;
     font-size: 14px;
     font-weight: 400; 
+    margin-top: -7px;
 }
 
 .total-nationalusers {
-    margin: -65px 205px;
+    margin: -60px 200px;
 }
 
 .analytics-recentactivities {

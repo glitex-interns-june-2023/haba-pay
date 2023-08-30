@@ -145,7 +145,7 @@ const Analytics = () => {
                                         </div>
 
                                         <div className="total-nationalusers">
-                                            <h2>Total Users</h2>
+                                            <h2>TotalUsers</h2>
                                             <h3>4,450</h3>
                                         </div>
                                     </div>
