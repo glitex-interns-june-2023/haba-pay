@@ -3,25 +3,41 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AppPin = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [loginPin, setLoginPin] = useState('');
+  const [confirmPin, setConfirmPin] = useState('');
 
   const handleCreatePin = () => {
-    // Handle login pin creation logic here
-    // Redirect to the finish page or show a success toast
-    toast.success('Account was created successfully');
-    history('/dashboard');
+    if (loginPin === confirmPin) {
+      toast.success('Account was created successfully');
+      navigate('/home');
+    } else {
+      toast.error('PINs do not match. Please try again.');
+    }
   };
 
   return (
     <div>
       <h1>App Login Pin</h1>
       <p>Create a PIN to log in to the app</p>
-      <input
-        type="password"
-        value={loginPin}
-        onChange={(e) => setLoginPin(e.target.value)}
-      />
+      <label>
+        Login PIN
+        <input
+          type="password"
+          value={loginPin}
+          onChange={(e) => setLoginPin(e.target.value)}
+        />
+      </label>
+      <br />
+      <label>
+        Confirm PIN
+        <input
+          type="password"
+          value={confirmPin}
+          onChange={(e) => setConfirmPin(e.target.value)}
+        />
+      </label>
+      <br />
       <button onClick={handleCreatePin}>Finish</button>
     </div>
   );
