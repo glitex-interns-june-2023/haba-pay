@@ -2,7 +2,7 @@ import React from 'react';
 import '../Styles/Analytics.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
-import HabaChart from '../Components/HabaChart';
+import AnalyticsChart from '../Components/AnalyticsChart';
 import map from '../assets/map.png';
 import stats from '../assets/stats.png';
 
@@ -67,7 +67,7 @@ const Analytics = () => {
                         </div>
 
                         <div className="adoption-chart">
-                            <HabaChart />
+                            <AnalyticsChart />
                         </div>
                     </div>
 
