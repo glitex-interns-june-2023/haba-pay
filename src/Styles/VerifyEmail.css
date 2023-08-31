@@ -1,0 +1,65 @@
+.verify-email {
+    width: 370px;
+    height: 542px; 
+    left: 535px;
+    top: 50px;    
+    border-radius: 5px;
+    border: 0.5px solid #DED9D9;
+    background: #FFFEFD;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    overflow: hidden;
+}
+
+.verify-email-header h1 {
+    font-size: 22px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.verify-email-header p {
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    text-align: center;
+}
+
+.verify-email label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 50px;
+}
+
+.verify-email input {
+    width: 310px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DED9D9;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.verify-email button {
+    display: flex;
+    width: 240px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 175px;
+    margin-left: 65px;
+    border-radius: 5px;
+    background-color: #FDAC15;
+    border: none;
+    color: #FFFEFD;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 600;
+}
