@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import '../Styles/AppPin.css';
+import close from '../assets/close.png';
 
 const AppPin = () => {
   const navigate = useNavigate();
   const [loginPin, setLoginPin] = useState('');
   const [confirmPin, setConfirmPin] = useState('');
+
+  const handleButtonClick = () => {
+    navigate('/abort');
+  };
 
   const handleCreatePin = () => {
     if (loginPin === confirmPin) {
@@ -17,9 +23,18 @@ const AppPin = () => {
   };
 
   return (
-    <div>
-      <h1>App Login Pin</h1>
-      <p>Create a PIN to log in to the app</p>
+    <div className="app-pin">
+      <div className="close-btn-container">
+        <div className="close-btn" onClick={handleButtonClick}>
+          <img src={close} alt="close" />
+        </div>
+      </div>
+
+      <div className="app-pin-header">
+        <h1>App Login Pin</h1>
+        <p>Create a PIN to log in to the app</p>
+      </div>
+
       <label>
         Login PIN
         <input
