@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/CreateAccount.css';
+import close from '../assets/close.png';
 
 const CreateAccount = () => {
   const history = useNavigate();
@@ -14,6 +15,10 @@ const CreateAccount = () => {
   const [loginPin, setLoginPin] = useState('');
 
   const handleCancel = () => {
+    history('/abort');
+  };
+
+  const handleButtonClick = () => {
     history('/abort');
   };
 
@@ -49,74 +54,86 @@ const CreateAccount = () => {
   };
 
   return (
-    <div className="create-account">
-      <h1>Create Admin Account</h1>
-      <p>Enter account details for the new admin account</p>
-      <div className="account-details">
-        <div className="account-detail">
-          <label>Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <label>Primary Number</label>
-          <input
-            type="text"
-            value={primaryNumber}
-            onChange={(e) => setPrimaryNumber(e.target.value)}
-          />
-
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+    <div className="create-account-container">
+      <div className="create-account">
+        <div className="close-btn-container">
+          <div className="close-btn" onClick={handleButtonClick}>
+            <img src={close} alt="close" />
+          </div>
         </div>
 
-        <div className="account-detail">
-          <label>Secondary Number</label>
-          <input
-            type="text"
-            value={secondaryNumber}
-            onChange={(e) => setSecondaryNumber(e.target.value)}
-          />
-
-          <label>Business</label>
-          <input
-            type="text"
-            value={business}
-            onChange={(e) => setBusiness(e.target.value)}
-          />
-
-          <label>Location</label>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-
-          <label>Login Pin</label>
-          <input
-            type="password"
-            value={loginPin}
-            onChange={(e) => setLoginPin(e.target.value)}
-          />
+        <div className="create-account-header">
+          <h1>Create Admin Account</h1>
+          <p>Enter account details for the new admin account</p>
         </div>
-      </div>
+        <div className="create-account-details">
+          <div className="create-account-detail">
+            <label>Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-      <div className="acc-btn">
-        <button onClick={handleCancel} className="btn-cancel">Cancel</button>
-        <button onClick={handleVerifyEmail} className="btn-verify">Verify Email</button>
+            <label>Primary Number</label>
+            <input
+              type="text"
+              value={primaryNumber}
+              onChange={(e) => setPrimaryNumber(e.target.value)}
+            />
+
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="create-account-line"></div>
+
+          <div className="create-account-detail1">
+            <label>Secondary Number</label>
+            <input
+              type="text"
+              value={secondaryNumber}
+              onChange={(e) => setSecondaryNumber(e.target.value)}
+            />
+
+            <label>Business</label>
+            <input
+              type="text"
+              value={business}
+              onChange={(e) => setBusiness(e.target.value)}
+            />
+
+            <label>Location</label>
+            <input
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+
+            <label>Login Pin</label>
+            <input
+              type="password"
+              value={loginPin}
+              onChange={(e) => setLoginPin(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="acc-btn">
+          <button onClick={handleCancel} className="btn-cancel">Cancel</button>
+          <button onClick={handleVerifyEmail} className="btn-verify">Verify Email</button>
+        </div>
       </div>
     </div>
   );

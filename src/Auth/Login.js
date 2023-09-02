@@ -49,7 +49,7 @@ function Login() {
 
         navigate('/home');
       } else {
-        setErrorMessage('Incorrect username or password'); 
+        setErrorMessage('Incorrect email or password'); 
       }
     } catch (error) {
       console.error(error);

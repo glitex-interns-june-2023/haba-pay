@@ -122,6 +122,19 @@
     flex-direction: row;
 }
 
+.userprofile-btns {
+    margin-left: 15px;
+}
+
+.userprofile-btn h2,
+.useractions-btn h2,
+.usercontact-btn h2 {
+    color: #FDAC15;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 .userprofile-btns .userprofile-btn,
 .userprofile-btns .useractions-btn,
 .userprofile-btns .usercontact-btn {
@@ -132,10 +145,6 @@
     border-radius: 5px;
     border: 1px solid #FDAC15;
     height: 30px;
-    color: #FDAC15;
-    font-family: IBM Plex Sans;
-    font-size: 16px;
-    font-weight: 400;
 }
 
 .line {
