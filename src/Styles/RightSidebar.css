@@ -10,7 +10,7 @@
 .transaction h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     padding-left: 10px;
 }
@@ -20,36 +20,39 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
     gap: 10px;
     top: 0;
     margin: 0;
     line-height: 0;
 }
 
-.transaction-status h2 {
+.transaction-status .pending-btn {
     display: flex;
     padding: 6px 12px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 5px;
     background: #FDAC15;
+    border: none;
     color: #FFFEFD;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: normal;
 }
 
-.transaction-status h3 {
+.transaction-status .approved-btn {
     display: flex;
     padding: 4px 10px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 5px;
     border: 1px solid #FDAC15;
+    background: transparent;
     color: #FDAC15;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: normal;
 }
@@ -118,14 +121,14 @@
 .name {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .admin-number {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     padding-top: 12px;
 }
@@ -140,14 +143,14 @@
 .status-details .amount {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .status-details .time {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     padding-top: 12px;
 }
@@ -166,21 +169,21 @@
 .new-details {
     display: inline-flex;
     align-items: center;
-    gap: 170px;
+    gap: 180px;
     padding-top: 10px;
 }
 
 .details-title {
     color: var(--black, #323232);
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .user-view{
     color: #898989;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -201,7 +204,7 @@
 .date-reg h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -216,19 +219,19 @@
 .detail-name {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .detail-email {
     color: #898989;
     font-family: IBM Plex Sans;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .view img {
     display: flex;
     align-items: flex-end;
-    padding: 10px 10px;
+    padding: 10px -10px;
 }
