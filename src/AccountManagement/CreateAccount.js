@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 import '../Styles/CreateAccount.css';
 import close from '../assets/close.png';
 
@@ -22,36 +23,17 @@ const CreateAccount = () => {
     history('/abort');
   };
 
-  const handleVerifyEmail = async () => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      const verificationPin = generateVerificationPin();
-      await sendVerificationEmail(email, verificationPin);
-      history(`/verify-email?email=${email}`);
-    } catch (error) {
-      console.error('An error occurred while sending the verification email:', error);
-    }
-  };
-
-  const generateVerificationPin = () => {
-    return Math.floor(100000 + Math.random() * 900000);
-  };
-
-  const sendVerificationEmail = async (email, verificationPin) => {
-    try {
-      await fetch('https://habaapi.glitexsolutions.co.ke/api/send-verification-code/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, verificationPin }),
+  const handleVerifyEmail = () => {
+    axios
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', { email, loginPin })
+      .then((response) => {
+        console.log('Email Verified:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error verifying email:', error);
       });
-      console.log('Verification email sent');
-    } catch (error) {
-      console.error('An error occurred while sending the verification email:', error);
-    }
   };
+
 
   return (
     <div className="create-account-container">

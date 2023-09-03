@@ -225,6 +225,16 @@
     gap: 16px;
 }
 
+.userprofile-action button {
+    border: none;
+    background: transparent;
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
 .edit-userprofile,
 .suspend-userprofile,
 .delete-userprofile {
@@ -257,4 +267,32 @@
 
 .transaction-activity .activity {
     margin-bottom: 12px;
+}
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Above the overlay */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+/* Show the overlay and modal when open */
+.overlay.active,
+.modal.active {
+    display: block;
 }
