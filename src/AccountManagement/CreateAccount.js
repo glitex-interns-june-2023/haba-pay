@@ -33,17 +33,6 @@ const CreateAccount = () => {
       .catch((error) => {
         console.error('Error sending email verification pin:', error);
       });
-
-
-    axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/otp/send', { primaryNumber })
-      .then((response) => {
-        console.log('OTP Sent to Primary Number:', response.data);
-        history('/verify-number');
-      })
-      .catch((error) => {
-        console.error('Error sending OTP to primary number:', error);
-      });
   };
 
 
