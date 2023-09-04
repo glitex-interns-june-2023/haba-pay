@@ -4,26 +4,40 @@ import axios from 'axios';
 import '../Styles/VerifyEmail.css';
 import close from '../assets/close.png';
 
-function EmailVerification() {
+function VerifyEmail({ primaryNumber }) {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [pin, setPin] = useState('');
 
   const handleButtonClick = () => {
     navigate('/abort');
   };
 
+  const handlePinChange = (event) => {
+    setPin(event.target.value);
+  };
 
-  const handleVerifyEmail = () => {
+  const handleVerifyClick = () => {
+    
     axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', { email })
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', { emailPin: pin })
       .then((response) => {
-        console.log('Email Verified:', response.data);
+        console.log('Email Pin Verified:', response.data);
+
+        // After verifying the email pin, send the OTP to the primary number
+        axios
+          .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/otp/send', { phoneNumber: primaryNumber })
+          .then((otpResponse) => {
+            console.log('OTP Sent to Primary Number:', otpResponse.data);
+            navigate('/verify-number');
+          })
+          .catch((otpError) => {
+            console.error('Error sending OTP:', otpError);
+          });
       })
       .catch((error) => {
-        console.error('Error verifying email:', error);
+        console.error('Error verifying email pin:', error);
       });
   };
-  
 
   return (
     <div className="verify-email">
@@ -37,18 +51,13 @@ function EmailVerification() {
         <h1>Verify Email</h1>
         <p>A verification PIN was sent to the email account you entered</p>
       </div>
-      <form>
-        <label htmlFor="pin">Verification Pin</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button onClick={handleVerifyEmail}>Verify Email</button>
-      </form>
+
+      <label htmlFor="pin">Verification Pin</label>
+      <input type="text" id="pin" value={pin} onChange={handlePinChange} />
+
+      <button onClick={handleVerifyClick}>Verify</button>
     </div>
   );
 }
 
-export default EmailVerification;
+export default VerifyEmail;
