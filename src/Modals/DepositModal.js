@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import deposit from '../assets/deposit.png';
+import sent from '../assets/sent.png';
 import close from '../assets/close.png';
 import '../Styles/DepositModal.css';
 
@@ -23,7 +23,7 @@ const DepositModal = () => {
 
                 <div className="depositmodal-header">
                     <h1>Transaction Details</h1>
-                    <h2><span><img src={deposit} alt="deposit" /></span>Deposit</h2>
+                    <h2><span><img src={sent} alt="deposit" /></span>Deposit</h2>
                 </div>
 
                 <div className="depositmodal-content">

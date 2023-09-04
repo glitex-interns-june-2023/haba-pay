@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import withdrawal from '../assets/withdrawal.png';
+import withdraw from '../assets/withdraw.png';
 import close from '../assets/close.png';
 import '../Styles/WithdrawalModal.css';
 
@@ -30,7 +30,7 @@ const WithdrawalModal = () => {
 
                 <div className="withdrawalmodal-header">
                     <h1>Transaction Details</h1>
-                    <h2><span><img src={withdrawal} alt="Withdrawal" /></span>Withdrawal</h2>
+                    <h2><span><img src={withdraw} alt="Withdraw" /></span>Withdrawal</h2>
                 </div>
 
                 <div className="withdrawalmodal-line"></div>
