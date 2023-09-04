@@ -23,14 +23,26 @@ const CreateAccount = () => {
     history('/abort');
   };
 
-  const handleVerifyEmail = () => {
+  const handleSendVerificationPin = () => {
     axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', { email, loginPin })
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/send', { email })
       .then((response) => {
-        console.log('Email Verified:', response.data);
+        console.log('Email Verification Pin Sent:', response.data);
+        history('/verify-email');
       })
       .catch((error) => {
-        console.error('Error verifying email:', error);
+        console.error('Error sending email verification pin:', error);
+      });
+
+
+    axios
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/otp/send', { primaryNumber })
+      .then((response) => {
+        console.log('OTP Sent to Primary Number:', response.data);
+        history('/verify-number');
+      })
+      .catch((error) => {
+        console.error('Error sending OTP to primary number:', error);
       });
   };
 
@@ -114,7 +126,7 @@ const CreateAccount = () => {
 
         <div className="acc-btn">
           <button onClick={handleCancel} className="btn-cancel">Cancel</button>
-          <button onClick={handleVerifyEmail} className="btn-verify">Verify Email</button>
+          <button onClick={handleSendVerificationPin} className="btn-verify">Verify Email</button>
         </div>
       </div>
     </div>
