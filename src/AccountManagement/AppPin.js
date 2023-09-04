@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../Styles/AppPin.css';
 import close from '../assets/close.png';
 
 const AppPin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [loginPin, setLoginPin] = useState('');
   const [confirmPin, setConfirmPin] = useState('');
+
+  const initialPin = location.state && location.state.initialPin;
 
   const handleButtonClick = () => {
     navigate('/abort');
   };
 
   const handleCreatePin = () => {
-    if (loginPin === confirmPin) {
+    if (loginPin === confirmPin && loginPin === initialPin) {
       toast.success('Account was created successfully');
       navigate('/home');
     } else {
-      toast.error('PINs do not match. Please try again.');
+      toast.error('PINs do not match or do not match the initial PIN. Please try again.');
     }
   };
 
