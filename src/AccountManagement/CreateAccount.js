@@ -23,17 +23,41 @@ const CreateAccount = () => {
     history('/abort');
   };
 
-  const handleSendVerificationPin = () => {
+  const handleCreateAccount = () => {
+
+    const adminData = {
+      name,
+      primaryNumber,
+      email,
+      password,
+      secondaryNumber,
+      business,
+      location,
+      loginPin
+    };
+
     axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/send', { email })
+      .post('https://habaapi.glitexsolutions.co.ke/api/auth/register', adminData)
       .then((response) => {
-        console.log('Email Verification Pin Sent:', response.data);
-        history('/verify-email');
+        console.log('Admin registered successfully:', response.data);
+
+        axios
+          .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/send', { email }) 
+          .then((pinResponse) => {
+            console.log('Email Verification Pin Sent:', pinResponse.data);
+
+          
+            history('/verify-email');
+          })
+          .catch((pinError) => {
+            console.error('Error sending email verification pin:', pinError);
+          });
       })
       .catch((error) => {
-        console.error('Error sending email verification pin:', error);
+        console.error('Error registering admin:', error);
       });
   };
+
 
 
   return (
@@ -115,7 +139,7 @@ const CreateAccount = () => {
 
         <div className="acc-btn">
           <button onClick={handleCancel} className="btn-cancel">Cancel</button>
-          <button onClick={handleSendVerificationPin} className="btn-verify">Verify Email</button>
+          <button onClick={handleCreateAccount} className="btn-verify">Verify Email</button>
         </div>
       </div>
     </div>
