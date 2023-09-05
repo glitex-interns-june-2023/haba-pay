@@ -7,7 +7,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(''); 
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -16,12 +16,12 @@ function Login() {
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    setErrorMessage(''); 
+    setErrorMessage('');
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setErrorMessage(''); 
+    setErrorMessage('');
   };
 
   const handleSubmit = async (e) => {
@@ -49,7 +49,7 @@ function Login() {
 
         navigate('/home');
       } else {
-        setErrorMessage('Incorrect email or password'); 
+        setErrorMessage('Incorrect email or password');
       }
     } catch (error) {
       console.error(error);
@@ -67,27 +67,26 @@ function Login() {
         <div className="login-title">
           <h2>Log in to Account</h2>
         </div>
-        {errorMessage && <div className="error-message">{errorMessage}</div>} 
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className={email ? 'has-content' : ''}>
             Email
             <input type="email" id="email" value={email} onChange={handleEmailChange} />
           </label>
           <br />
-          <label>
+          <label className={password ? 'has-content' : ''}>
             Password
             <input type="password" id="password" value={password} onChange={handlePasswordChange} />
           </label>
           <br />
           <button className={`login-btn ${isMobile ? 'mobile-login' : ''}`} type="submit" disabled={loading}>
             {loading ? 'Processing...' : 'Log In'}
-        </button>
+          </button>
         </form>
 
         <Link to="/reset-password" className="forgot-pwd">
           Forgot Password?
         </Link>
-
       </div>
     </div>
   );

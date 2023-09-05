@@ -56,6 +56,13 @@
     border-radius: 5px;
 }
 
+.has-content input {
+    padding-left: 5px;
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    background-color: transparent !important;
+}
+
 .error-message {
     font-family: IBM Plex Sans;
     font-size: 18px;
