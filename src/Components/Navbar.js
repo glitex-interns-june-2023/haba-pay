@@ -44,6 +44,12 @@ const Navbar = () => {
   const isSettingsPage = location.pathname === '/settings';
   const isManageUsersPage = location.pathname === '/manage-users';
 
+  const handleSearchClick = () => {
+    // Implement search functionality here
+    console.log('Search initiated');
+    // Perform a search operation here, e.g., make an API call
+  };
+
   return (
     <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="title">
@@ -53,7 +59,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-search">
-        <div className="search">
+        <div className="search" onClick={handleSearchClick}>
           <img src={search} alt="search" />
           <h2>Search...</h2>
         </div>
