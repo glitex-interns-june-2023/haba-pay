@@ -1,6 +1,7 @@
 .manage-container {
     display: flex;
     min-height: 100vh;
+    overflow-x: hidden;
 }
   
 .LeftSidebar {
@@ -13,12 +14,12 @@
 }
 
 .manage-details {
-    width: 1075px;
+    width: 980px;
     height: 520px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
     margin-top: 130px;
-    margin-left: 40px;
+    margin-left: 30px;
     padding-left: 20px;
 }
 
@@ -26,7 +27,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 260px;
+    gap: 215px;
 }
 
 .header-title h4 {
@@ -287,14 +288,6 @@
     gap: 16.5px;
 }
 
-.manage-activities {
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    margin-left: 40px;
-    gap: 12px;
-}
-
 .manage-activity {
     width: 672px;
     height: 342px;
@@ -342,4 +335,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+}
+
+.manage-new-users {
+    margin: 20px 620px;
 }
