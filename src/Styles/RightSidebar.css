@@ -88,6 +88,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    width: 24px;
+    height: 24px;
     border-radius: 40px;
     background: #FFF7E8;
 }

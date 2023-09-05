@@ -26,18 +26,18 @@ const CreateAccount = () => {
   const handleCreateAccount = () => {
 
     const adminData = {
-      name,
-      primaryNumber,
+      username: name,
+      phone: primaryNumber,
       email,
       password,
-      secondaryNumber,
-      business,
+      secondary_phone: secondaryNumber,
+      business_name: business,
       location,
-      loginPin
+      login_pin: loginPin,
     };
 
     axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/auth/register', adminData)
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/auth/register', adminData)
       .then((response) => {
         console.log('Admin registered successfully:', response.data);
 

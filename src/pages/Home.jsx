@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../Styles/Home.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
@@ -9,6 +10,22 @@ import review from '../assets/review.png';
 import HabaChart from '../Components/HabaChart';
 
 const Home = () => {
+  const [recentActivity, setRecentActivity] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://habaapi.glitexsolutions.co.ke/api/v1/admins/transactions/{id}')
+      .then(response => {
+        const activityData = response.data.data;
+  
+        setRecentActivity(activityData);
+      })
+      .catch(error => {
+        console.error('Error fetching recent activity:', error);
+      });
+  }, []);
+
+
+
   return (
     <div className="home-container">
      <LeftSidebar />
@@ -42,6 +59,17 @@ const Home = () => {
       <div className="recent-activity">
         <h1>Recent Activity</h1>
         <div className="activities">
+          <div className="activities">
+            {recentActivity.map(activity => (
+              <div className="activity" key={activity.id}>
+                <div className="recent">
+                  <div className="user">{activity.username} <span>created an account</span></div>
+                  <div className="time">Today</div>
+                </div>
+                <div className="review">Review <img src={review} alt="" /></div>
+              </div>
+            ))}
+          </div>
           <div className="activity">
             <div className="recent">
               <div className="user">Grace Mwai <span>created a HabaPay account</span></div>
