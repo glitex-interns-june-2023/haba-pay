@@ -17,15 +17,18 @@ function VerifyEmail({ primaryNumber }) {
   };
 
   const handleVerifyClick = () => {
-    
+    const verificationData = {
+      pin,
+    };
+
     axios
-      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', { emailPin: pin })
+      .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/pin/verify', verificationData)
       .then((response) => {
         console.log('Email Pin Verified:', response.data);
 
         // After verifying the email pin, send the OTP to the primary number
         axios
-          .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/otp/send', { phoneNumber: primaryNumber })
+          .post('https://habaapi.glitexsolutions.co.ke/api/v1/verifications/otp/send', { phone: primaryNumber })
           .then((otpResponse) => {
             console.log('OTP Sent to Primary Number:', otpResponse.data);
             navigate('/verify-number');

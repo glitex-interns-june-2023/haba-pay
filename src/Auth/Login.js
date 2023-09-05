@@ -29,13 +29,13 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/admins/login/', {
+      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/v1/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: email,
+          email,
           password,
         }),
       });
