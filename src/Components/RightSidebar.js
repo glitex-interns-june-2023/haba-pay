@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import WithdrawalModal from '../Modals/WithdrawalModal';
+import DepositModal from '../Modals/DepositModal';
 import withdraw from '../assets/withdraw.png';
 import deposit from '../assets/deposit.png';
 import sent from '../assets/sent.png';
@@ -9,70 +11,11 @@ import '../Styles/RightSidebar.css';
 
 const RightSidebar = () => {
     const [selectedStatus, setSelectedStatus] = useState('Pending');
-    const [transactions, setTransactions] = useState([
-        {
-            type: 'withdraw',
-            full_name: 'Jane Mukenya M.',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '240',
-            timestamp: '12:45 PM'
-        },
-
-        {
-            type: 'withdraw',
-            full_name: 'Obi Peter',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '4000',
-            timestamp: '12:00 PM'
-        },
-
-        {
-            type: 'sent',
-            full_name: 'Bola Tinubu',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '40',
-            timestamp: '11:45 PM'
-        },
-
-        {
-            type: 'withdraw',
-            full_name: 'John Doe',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '60',
-            timestamp: '11:05 PM'
-        },
-
-        {
-            type: 'sent',
-            full_name: 'Client Mwilu',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '100',
-            timestamp: '8:16 AM'
-        },
-
-        {
-            type: 'withdraw',
-            full_name: 'Josephine Naruto',
-            phoneNumber: '+254712345678',
-            currency: 'Ksh',
-            amount: '180',
-            timestamp: '5:55 AM'
-        },
-
-        {
-            type: 'sent',
-            full_name: 'Grace Mwai',
-            phone: '+254712345678',
-            currency: 'Ksh',
-            amount: '750',
-            timestamp: '1:07 PM'
-        },
-    ]);
+    const [transactions, setTransactions] = useState([]);
+    const [isWithdrawalModalOpen, setIsWithdrawalModalOpen] = useState(false);
+    const [selectedWithdrawal, setSelectedWithdrawal] = useState(null);
+    const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
+    const [selectedDeposit, setSelectedDeposit] = useState(null);
 
     useEffect(() => {
         // Fetch data from API when selectedStatus changes
@@ -93,6 +36,27 @@ const RightSidebar = () => {
     };
 
 
+    const openWithdrawalModal = (transaction) => {
+        setSelectedWithdrawal(transaction);
+        setIsWithdrawalModalOpen(true);
+    };
+    
+    const closeWithdrawalModal = () => {
+        setSelectedWithdrawal(null);
+        setIsWithdrawalModalOpen(false);
+    };
+
+    const openDepositModal = (transaction) => {
+        setSelectedDeposit(transaction);
+        setIsDepositModalOpen(true);
+    };
+    
+    const closeDepositModal = () => {
+        setSelectedDeposit(null);
+        setIsDepositModalOpen(false);
+    };
+
+
     return (
         <div className="right-sidebar">
             <div className="transactions">
@@ -105,7 +69,16 @@ const RightSidebar = () => {
 
                     <div className="transaction-details">
                         {Array.isArray(transactions) && transactions.map((transaction, index) => (
-                            <div className="transaction-detail" key={index}>
+                            <div className="transaction-detail" 
+                                key={index} 
+                                onClick={() => {
+                                    if (transaction.type === 'withdraw') {
+                                    openWithdrawalModal(transaction);
+                                    } else if (transaction.type === 'deposit') {
+                                    openDepositModal(transaction);
+                                    }
+                                }}
+                              >
                                 <img src={transaction.type === 'withdraw' ? withdraw : transaction.type === 'deposit' ? deposit : sent} alt="" />
                                 <div className="admin-details">
                                     <div className="admin-detail">
@@ -120,6 +93,18 @@ const RightSidebar = () => {
                             </div>
                         ))}
                     </div>
+
+                    <WithdrawalModal
+                        isOpen={isWithdrawalModalOpen}
+                        closeModal={closeWithdrawalModal}
+                        withdrawalTransaction={selectedWithdrawal}
+                    />
+
+                    <DepositModal
+                        isOpen={isDepositModalOpen}
+                        closeModal={closeDepositModal}
+                        depositTransaction={selectedDeposit}
+                    />
                 </div>
             </div>
 
