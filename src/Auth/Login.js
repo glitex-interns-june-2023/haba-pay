@@ -3,11 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import '../Styles/Login.css';
 
+import axios from '../axios';
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -29,30 +32,23 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://habaapi.glitexsolutions.co.ke/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+      const response = await axios.post("/api/v1/auth/login", {
+        email: email,
+        password: password,
       });
+      const data = response.data;
+      const user = data.data
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
+      console.log("User token",user.access_token);
 
         setEmail('');
         setPassword('');
 
         navigate('/home');
-      } else {
-        setErrorMessage('Incorrect email or password');
-      }
-    } catch (error) {
-      console.error(error);
+     
+    } catch ({ response: { data: error } = {} }) {
+      // setError(error);
+      setErrorMessage(error.message);
     }
 
     setLoading(false);

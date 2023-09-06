@@ -47,7 +47,8 @@ const ResetPassword = () => {
         setResetStatus("error");
       }
     } catch ({ response: { data: error } = {} }) {
-      console.log("error", error?.message);
+
+      console.log("testing error", error);
       setError(error);
       setResetStatus("error");
     }
