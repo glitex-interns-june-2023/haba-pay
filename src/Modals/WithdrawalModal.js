@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import withdraw from '../assets/withdraw.png';
 import close from '../assets/close.png';
 import '../Styles/WithdrawalModal.css';
 
-const WithdrawalModal = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const closeModal = () => {
-        setIsOpen(false);
-    };
-
-    const handleOutsideClick = (event) => {
-        if (isOpen && !event.target.closest('.withdrawalmodal-wrapper')) {
-            closeModal();
-        }
-    };
-
-    const modalClassName = isOpen ? 'withdrawalmodal-container open' : 'withdrawalmodal-container';
+const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal }) => {
+    if (!isOpen || !withdrawalTransaction) {
+      return null;
+    }
 
     return (
-        <div className={modalClassName} onClick={handleOutsideClick}>
+        <div className="withdrawalmodal-container">
             <div className="withdrawalmodal-wrapper">
                 <div className="close-btn-container">
                     <button className="close-btn" onClick={closeModal}>
