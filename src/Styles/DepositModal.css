@@ -1,28 +1,31 @@
 .depositmodal-container {
     display: flex; 
     justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
+    align-items: center;
     background: #FFFEFD; 
     position: fixed;
+    width: 370px;
+    height: 530px;
+    flex-shrink: 0;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1000; 
-}
-
-.depositmodal-wrapper {
-    width: 370px;
-    height: 552px;
+    overflow-y: hidden;
+    margin: 50px 600px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
 }
 
-.close-btn-container {
+.closebtn-container {
     text-align: right;
     margin: 10px 10px 0 0;
+}
+
+.deposit .close-btn {
+    margin-top: 5px;
 }
 
 .close-btn {
@@ -59,6 +62,7 @@
 
 .depositmodal-header {
     text-align: center;
+    margin-top: -20px;
 }
 
 .depositmodal-header h1 {
@@ -84,7 +88,7 @@
 .depositmodal-content {
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    margin-left: 5px;
 }
 
 .depositmodal-transaction {
