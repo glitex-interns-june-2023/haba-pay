@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } fro
 const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const HabaChart = () => {
+
   const data = [
     { x: 0, y: 210 },
     { x: 1, y: 280 },
@@ -14,10 +15,12 @@ const HabaChart = () => {
     { x: 6, y: 340 },
   ];
 
+
   const formatXAxisLabel = (value) => dayNames[value];
 
+
   return (
-    <div>
+    <div className="haba-chart-container">
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
