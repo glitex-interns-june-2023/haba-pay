@@ -19,6 +19,7 @@ import Settings from './pages/Settings';
 import AdminProfile from './pages/AdminProfile';
 import WithdrawalModal from './Modals/WithdrawalModal';
 import DepositModal from './Modals/DepositModal';
+import ConfirmIdentity from './Modals/ConfirmIdentity';
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/admin-profile" element={<AdminProfile />} />
         <Route path="/withdrawal" element={<WithdrawalModal />} />
         <Route path="/deposit" element={<DepositModal />} />
+        <Route path="/confirm-identity" element={<ConfirmIdentity />} />
       </Routes>
     </Router>
   );

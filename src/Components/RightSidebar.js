@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import WithdrawalModal from '../Modals/WithdrawalModal';
 import DepositModal from '../Modals/DepositModal';
+import ConfirmIdentity from '../Modals/ConfirmIdentity'
 import withdraw from '../assets/withdraw.png';
 import deposit from '../assets/deposit.png';
 import sent from '../assets/sent.png';
@@ -16,6 +17,7 @@ const RightSidebar = () => {
     const [selectedWithdrawal, setSelectedWithdrawal] = useState(null);
     const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
     const [selectedDeposit, setSelectedDeposit] = useState(null);
+    const [isConfirmIdentityModalOpen, setIsConfirmIdentityModalOpen] = useState(false);
 
     useEffect(() => {
         // Fetch data from API when selectedStatus changes
@@ -54,6 +56,10 @@ const RightSidebar = () => {
     const closeDepositModal = () => {
         setSelectedDeposit(null);
         setIsDepositModalOpen(false);
+    };
+
+    const handleWithdrawalApprove = () => {
+        setIsConfirmIdentityModalOpen(true);
     };
 
 
@@ -98,7 +104,13 @@ const RightSidebar = () => {
                         isOpen={isWithdrawalModalOpen}
                         closeModal={closeWithdrawalModal}
                         withdrawalTransaction={selectedWithdrawal}
+                        onApprove={handleWithdrawalApprove}
                     />
+
+                    <ConfirmIdentity
+                        isOpen={isConfirmIdentityModalOpen}
+                        closeModal={() => setIsConfirmIdentityModalOpen(false)}
+                    />          
 
                     <DepositModal
                         isOpen={isDepositModalOpen}
