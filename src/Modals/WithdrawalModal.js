@@ -1,13 +1,27 @@
 import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import withdraw from '../assets/withdraw.png';
 import close from '../assets/close.png';
 import '../Styles/WithdrawalModal.css';
 
-const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal }) => {
+const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal, onApprove }) => {
     if (!isOpen || !withdrawalTransaction) {
       return null;
     }
+
+    const handleApprove = () => {
+        axios
+            .post(`/api/v1/admins/transactions/{id}/approve`)
+            .then((response) => {
+                console.log('Transaction approved:', response.data);
+                onApprove();
+            })
+            .catch((error) => {
+                console.error('Error approving transaction:', error);
+            });
+    };
 
     return (
         <div className="withdrawalmodal-container">
@@ -47,10 +61,17 @@ const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal }) => {
                     </div>
                 </div>
 
-                <Link to="/confirm-identity" className="withdrawalmodal-btn">Approve</Link>
+                <Link to="/confirm-identity" className="withdrawalmodal-btn" onClick={handleApprove}>Approve</Link>
             </div>
         </div>
     );
+};
+
+WithdrawalModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    withdrawalTransaction: PropTypes.object,
+    closeModal: PropTypes.func.isRequired,
+    onApprove: PropTypes.func.isRequired,
 };
 
 export default WithdrawalModal;
