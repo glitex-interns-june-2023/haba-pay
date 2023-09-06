@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import close from '../assets/close.png';
+import close from '../assets/close.png'; 
 import '../Styles/ConfirmIdentity.css';
 
-const ConfirmIdentity = ({ isOpen }) => {
-    const navigate = useNavigate();
+const ConfirmIdentity = ({ isOpen, closeModal }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -14,23 +12,21 @@ const ConfirmIdentity = ({ isOpen }) => {
     const handleFinishClick = () => {
         setProcessing(true);
 
-        // Simulate an API call
         setTimeout(() => {
             setProcessing(false);
             setTransactionApproved(true);
         }, 2000);
     };
 
-    const closeModal = () => {
-        navigate('/home');
-      };
-    
+    const handleCloseClick = () => {
+        closeModal(); 
+    };
 
     return (
         <div className={`identity-container ${isOpen ? 'open' : ''}`}>
             <div className="identity-wrapper">
                 <div className="close-btn-container">
-                    <button className="close-btn" onClick={closeModal}>
+                    <button className="close-btn" onClick={handleCloseClick}>
                         <img src={close} alt="close" />
                     </button>
                 </div>
@@ -74,6 +70,7 @@ const ConfirmIdentity = ({ isOpen }) => {
 ConfirmIdentity.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default ConfirmIdentity;

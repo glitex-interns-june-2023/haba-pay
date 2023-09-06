@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import ConfirmIdentity from '../Modals/ConfirmIdentity';
 import withdraw from '../assets/withdraw.png';
 import close from '../assets/close.png';
 import '../Styles/WithdrawalModal.css';
 
 const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal, onApprove }) => {
+    const [isConfirmIdentityModalOpen, setIsConfirmIdentityModalOpen] = useState(false);
+
     if (!isOpen || !withdrawalTransaction) {
       return null;
     }
+
+    const handleConfirmIdentityClose = () => {
+        setIsConfirmIdentityModalOpen(false);
+    };
 
     const handleApprove = () => {
         axios
@@ -63,6 +70,11 @@ const WithdrawalModal = ({ isOpen, withdrawalTransaction, closeModal, onApprove 
 
                 <Link to="/confirm-identity" className="withdrawalmodal-btn" onClick={handleApprove}>Approve</Link>
             </div>
+
+            <ConfirmIdentity
+                isOpen={isConfirmIdentityModalOpen}
+                closeModal={handleConfirmIdentityClose}
+            />
         </div>
     );
 };

@@ -16,6 +16,7 @@
 
 .navbar.scrolled {
     background-color: #FFFBF4;
+    z-index: 10;
 }
 
 .title {

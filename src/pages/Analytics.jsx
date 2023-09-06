@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../Styles/Analytics.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
@@ -7,6 +8,39 @@ import map from '../assets/map.png';
 import stats from '../assets/stats.png';
 
 const Analytics = () => {
+    const [analyticsData, setAnalyticsData] = useState({
+        weeklyTransactions: {
+          total: 0,
+          percentage: 0,
+        },
+        weeklySignups: {
+          total: 0,
+          percentage: 0,
+        },
+        weeklyExchanges: {
+          total: 0,
+          percentage: 0,
+        },
+    });
+
+    
+  useEffect(() => {
+    axios.get('https://habaapi.glitexsolutions.co.ke/api/v1/analytics/overview') 
+      .then((response) => {
+        const data = response.data.data;
+        setAnalyticsData({
+          weeklyTransactions: data.weekly_transactions,
+          weeklySignups: data.weekly_signups,
+          weeklyExchanges: data.weekly_exchanges,
+        });
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+
+    
     return (
         <div className="analytics-container">
             <LeftSidebar />
@@ -19,34 +53,34 @@ const Analytics = () => {
                         <div className="weekly-analytics">
                             <div className="weekly-analytic">
                                 <h2>Weekly Usage</h2>
-                                <h3>16, 845 Transactions</h3>
+                                <h3>{analyticsData.weeklyTransactions.total} Transactions</h3>
                                 <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
                                     <path d="M17.8049 0.459118L13.4745 0.980859C13.331 0.99825 13.2701 1.17434 13.3723 1.27651L14.6614 2.56565L9.74838 7.4787L7.53533 5.26783C7.39837 5.13087 7.1788 5.13304 7.04402 5.26783L0.050522 12.2635C0.0181562 12.2962 0 12.3403 0 12.3863C0 12.4323 0.0181562 12.4765 0.050522 12.5092L1.02879 13.4918C1.09618 13.5592 1.20705 13.5592 1.27444 13.4918L7.28967 7.4787L9.50055 9.68958C9.63751 9.82436 9.85707 9.82436 9.99185 9.68958L15.8919 3.79391L17.181 5.08304C17.2041 5.10603 17.2332 5.12208 17.265 5.12935C17.2967 5.13662 17.3299 5.13484 17.3607 5.12419C17.3915 5.11355 17.4187 5.09447 17.4392 5.06913C17.4597 5.0438 17.4727 5.01322 17.4767 4.98087L17.9984 0.650423C18.0136 0.539553 17.918 0.443901 17.8049 0.459118Z" fill="#FDAC15"/>
                                 </svg>
-                                <span>3%</span>
+                                <span>{analyticsData.weeklyTransactions.percentage}%</span>
                                 </p>
                             </div>
 
                             <div className="weekly-analytic">
                                 <h2>Weekly Sign-Ups</h2>
-                                <h3>225 Users</h3>
+                                <h3>{analyticsData.weeklySignups.total} Users</h3>
                                 <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
                                     <path d="M17.8049 0.459118L13.4745 0.980859C13.331 0.99825 13.2701 1.17434 13.3723 1.27651L14.6614 2.56565L9.74838 7.4787L7.53533 5.26783C7.39837 5.13087 7.1788 5.13304 7.04402 5.26783L0.050522 12.2635C0.0181562 12.2962 0 12.3403 0 12.3863C0 12.4323 0.0181562 12.4765 0.050522 12.5092L1.02879 13.4918C1.09618 13.5592 1.20705 13.5592 1.27444 13.4918L7.28967 7.4787L9.50055 9.68958C9.63751 9.82436 9.85707 9.82436 9.99185 9.68958L15.8919 3.79391L17.181 5.08304C17.2041 5.10603 17.2332 5.12208 17.265 5.12935C17.2967 5.13662 17.3299 5.13484 17.3607 5.12419C17.3915 5.11355 17.4187 5.09447 17.4392 5.06913C17.4597 5.0438 17.4727 5.01322 17.4767 4.98087L17.9984 0.650423C18.0136 0.539553 17.918 0.443901 17.8049 0.459118Z" fill="#FDAC15"/>
                                 </svg>
-                                <span>5%</span>
+                                <span>{analyticsData.weeklySignups.percentage}%</span>
                                 </p>
                             </div>
 
                             <div className="weekly-analytic">
                                 <h2>Weekly Exchange</h2>
-                                <h3>Ksh 204,558</h3>
+                                <h3>Ksh {analyticsData.weeklyExchanges.total}</h3>
                                 <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
                                     <path d="M17.9984 13.3484L17.4767 9.01796C17.4593 8.87448 17.2832 8.81361 17.181 8.91578L15.8919 10.2071L9.99403 4.31142C9.85707 4.17664 9.63751 4.17664 9.50272 4.31142L7.28967 6.5223L1.27444 0.507065C1.24175 0.474699 1.19761 0.456543 1.15161 0.456543C1.10561 0.456543 1.06147 0.474699 1.02879 0.507065L0.050522 1.48968C0.0181562 1.52236 0 1.5665 0 1.6125C0 1.6585 0.0181562 1.70264 0.050522 1.73533L7.04402 8.73318C7.1788 8.87013 7.40054 8.87013 7.53533 8.73318L9.74838 6.5223L14.6636 11.4354L13.3745 12.7245C13.3515 12.7476 13.3354 12.7767 13.3282 12.8085C13.3209 12.8402 13.3227 12.8734 13.3333 12.9042C13.344 12.935 13.363 12.9622 13.3884 12.9827C13.4137 13.0032 13.4443 13.0162 13.4766 13.0201L17.8071 13.5419C17.918 13.5571 18.0136 13.4615 17.9984 13.3484Z" fill="#323232"/>
                                 </svg>
-                                <span>5%</span>
+                                <span>{analyticsData.weeklyExchanges.percentage}%</span>
                                 </p>
                             </div>
                         </div>
