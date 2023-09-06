@@ -10,7 +10,50 @@ import HabaChart from '../Components/HabaChart';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [recentActivity, setRecentActivity] = useState([]);
+  const [recentActivity, setRecentActivity] = useState([
+    {
+      id: 1,
+      message: 'Grace Mwai created a HabaPay account',
+      timestamp: 'Today, 01:07PM'
+    },
+
+    {
+      id: 2,
+      message: 'Jane Mukenya M. <span>withdrew Ksh 240',
+      timestamp: 'Today, 12:45PM'
+    },
+
+    {
+      id: 3,
+      message: 'Obi Peter withdrew Ksh 40000',
+      timestamp: 'Today, 12:00PM'
+    },
+
+    {
+      id: 4,
+      message: 'Grace Mwai added business to HabaPay',
+      timestamp: 'Today, 11:55PM'
+    },
+
+    {
+      id: 5,
+      message: 'Bola Tinubu sent Ksh 40 to Client Mwilu',
+      timestamp: 'Today, 11:05AM'
+    },
+
+    {
+      id: 6,
+      message: 'Bola Tinubu deposited Ksh to wallet',
+      timestamp: 'Today, 11:00AM'
+    },
+
+    {
+      id: 7,
+      message: 'Bola Tinubu created a new HabaPay account',
+      timestamp: 'Today, 10:30AM'
+    }
+
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
