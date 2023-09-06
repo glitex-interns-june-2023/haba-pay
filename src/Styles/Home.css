@@ -24,8 +24,8 @@
 
 .transaction-stat {
     margin-top: 20px;
-    width: 640px;
-    height: 481px;
+    width: 610px;
+    height: 480px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
     align-self: center;
@@ -34,13 +34,13 @@
 .stats {
     display: inline-flex;
     align-items: flex-start;
-    gap: 250px;
+    gap: 235px;
 }
 
 .stats .title {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     text-align: left;
     margin-top: 20px;
@@ -67,7 +67,7 @@
 .chart-filter h2 {
     color: #FFFEFD;
     font-family: IBM Plex Sans;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     padding-left: 10px
 }
@@ -95,8 +95,8 @@
 }
 
 .haba-chart {
-    margin-left: 20px;
     padding-top: 10px;
+    margin-right: 30px;
 }
 
 .recent-activity {

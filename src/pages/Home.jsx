@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Styles/Home.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
@@ -9,6 +9,19 @@ import review from '../assets/review.png';
 import HabaChart from '../Components/HabaChart';
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   return (
@@ -35,7 +48,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="haba-chart">
+          <div className="haba-chart" style={{ top: scrollY > 100 ? `${scrollY - 100}px` : 0 }}>
             <HabaChart />
           </div>
         </div>
