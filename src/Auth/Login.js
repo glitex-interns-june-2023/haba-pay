@@ -55,7 +55,7 @@ function Login() {
   return (
     <div
       className={`login-container ${
-        isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"
+        isDesktop ? "desktop" : isTablet ? "tablet" : isMobile ? "mobile" : ""
       }`}
     >
       <div className="title">
@@ -87,7 +87,7 @@ function Login() {
             />
           </label>
           <br />
-          <div className="w-100 d-flex justify-content-center mt-2">
+          <div className="w-100 d-flex justify-content-center mt-5">
             <Button extended={true} disabled={loading}>
               {loading ? "Processing..." : "Log In"}
             </Button>

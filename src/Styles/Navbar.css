@@ -41,7 +41,7 @@
 .search {
     display: flex;
     width: 260px;
-    height: 22px;
+    height: 40px;
     padding: 8px 32px;
     margin-top: 20px;
     align-items: center;
@@ -61,6 +61,7 @@
     font-family: IBM Plex Sans;
     font-size: 20px;
     font-weight: 400;
+    padding-top: 5px;
 }
 
 .search-filter img {

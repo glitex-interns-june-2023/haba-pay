@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../axios";
+import '../Styles/ResetPassword.css';
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +34,6 @@ const ResetPassword = () => {
     e.preventDefault();
     setResetStatus("loading");
 
-    // Replace with the correct send OTP API endpoint
     try {
       const response = await axios.post("/api/v1/auth/reset-password", {
         email: email,
@@ -58,7 +58,6 @@ const ResetPassword = () => {
     e.preventDefault();
     setResetStatus("loading");
 
-    // Replace with the correct verify OTP API endpoint
     const VERIFY_OTP_API_ENDPOINT =
       "https://habaapi.glitexsolutions.co.ke/api/google/verify-otp/";
 
@@ -90,11 +89,9 @@ const ResetPassword = () => {
     e.preventDefault();
     setResetStatus("loading");
 
-    // Replace with the correct confirm password reset API endpoint
     const CONFIRM_PASSWORD_RESET_API_ENDPOINT =
       "https://habaapi.glitexsolutions.co.ke/api/admins/password-reset/uid/token/";
 
-    // Replace with the correct password reset API endpoint
     const PASSWORD_RESET_API_ENDPOINT =
       "https://habaapi.glitexsolutions.co.ke/api/admins/password-reset/";
 
@@ -143,7 +140,6 @@ const ResetPassword = () => {
 
   const handleResendOTP = () => {
     setResetStatus("loading");
-    // Reuse the send OTP API endpoint for resending OTP
     const RESEND_OTP_API_ENDPOINT =
       "https://habaapi.glitexsolutions.co.ke/api/google/update-email/";
 
