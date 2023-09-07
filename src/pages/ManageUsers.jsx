@@ -8,6 +8,7 @@ import filter from '../assets/filter.png';
 import forwardreview from '../assets/forwardreview.png';
 import review from '../assets/review.png';
 import user from '../assets/user.png';
+import UsersData from '../Components/UsersData';
 
 const ManageUsers = () => {
     const [isQuickActionsOpen, setIsQuickActionsOpen] = useState(false);
@@ -182,6 +183,8 @@ const ManageUsers = () => {
                                 {isFilterOpen && <div className="overlay" onclick={toggleFilter}></div>}
                             </div>
                         </div>
+
+                        <UsersData/>
 
                         <div className="manage-numbers">
                             <img className="forward-review" src={forwardreview} alt="" />
