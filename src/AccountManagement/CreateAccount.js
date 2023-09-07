@@ -15,6 +15,8 @@ const CreateAccount = () => {
   const [location, setLocation] = useState('');
   const [loginPin, setLoginPin] = useState('');
 
+  const [validationErrors, setValidationErrors] = useState({});
+
   const handleCancel = () => {
     history('/abort');
   };
@@ -23,7 +25,43 @@ const CreateAccount = () => {
     history('/abort');
   };
 
+  const validateForm = () => {
+    const errors = {};
+
+    if (!name) {
+      errors.name = 'This field is required';
+    }
+    if (!primaryNumber) {
+      errors.primaryNumber = 'This field is required';
+    }
+    if (!email) {
+      errors.email = 'This field is required';
+    }
+    if (!password) {
+      errors.password = 'This field is required';
+    }
+    if (!secondaryNumber) {
+      errors.secondaryNumber = 'This field is required';
+    }
+    if (!business) {
+      errors.business = 'This field is required';
+    }
+    if (!location) {
+      errors.location = 'This field is required';
+    }
+    if (!loginPin) {
+      errors.loginPin = 'This field is required';
+    }
+
+    setValidationErrors(errors);
+
+    return Object.keys(errors).length === 0;
+  };
+
   const handleCreateAccount = () => {
+    if (!validateForm()) {
+      return;
+    }
 
     const adminData = {
       username: name,
@@ -80,6 +118,8 @@ const CreateAccount = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder={validationErrors.name ? validationErrors.name : ''}
+              className={validationErrors.name ? 'error-input' : ''}
             />
 
             <label>Primary Number</label>
@@ -87,6 +127,8 @@ const CreateAccount = () => {
               type="text"
               value={primaryNumber}
               onChange={(e) => setPrimaryNumber(e.target.value)}
+              placeholder={validationErrors.primaryNumber ? validationErrors.primaryNumber : ''}
+              className={validationErrors.primaryNumber ? 'error-input' : ''}
             />
 
             <label>Email</label>
@@ -94,6 +136,8 @@ const CreateAccount = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder={validationErrors.email ? validationErrors.email : ''}
+              className={validationErrors.email ? 'error-input' : ''}
             />
 
             <label>Password</label>
@@ -101,6 +145,8 @@ const CreateAccount = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder={validationErrors.password ? validationErrors.password : ''}
+              className={validationErrors.password ? 'error-input' : ''}
             />
           </div>
 
@@ -112,6 +158,8 @@ const CreateAccount = () => {
               type="text"
               value={secondaryNumber}
               onChange={(e) => setSecondaryNumber(e.target.value)}
+              placeholder={validationErrors.secondaryNumber ? validationErrors.secondaryNumber : ''}
+              className={validationErrors.secondaryNumber ? 'error-input' : ''}
             />
 
             <label>Business</label>
@@ -119,6 +167,8 @@ const CreateAccount = () => {
               type="text"
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
+              placeholder={validationErrors.business ? validationErrors.business : ''}
+              className={validationErrors.business ? 'error-input' : ''}
             />
 
             <label>Location</label>
@@ -126,6 +176,8 @@ const CreateAccount = () => {
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
+              placeholder={validationErrors.location ? validationErrors.location : ''}
+              className={validationErrors.location ? 'error-input' : ''}
             />
 
             <label>Login Pin</label>
@@ -133,13 +185,15 @@ const CreateAccount = () => {
               type="password"
               value={loginPin}
               onChange={(e) => setLoginPin(e.target.value)}
+              placeholder={validationErrors.loginPin ? validationErrors.loginPin : ''}
+              className={validationErrors.loginPin ? 'error-input' : ''}
             />
           </div>
         </div>
 
         <div className="acc-btn">
           <button onClick={handleCancel} className="btn-cancel">Cancel</button>
-          <button onClick={handleCreateAccount} className="btn-verify">Verify Email</button>
+          <button onClick={handleCreateAccount} className="btn-verify">Verify</button>
         </div>
       </div>
     </div>

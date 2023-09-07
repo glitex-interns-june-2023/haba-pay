@@ -1,5 +1,5 @@
 .right-sidebar {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .transactions {
@@ -166,7 +166,7 @@
 }
 
 .users-reg {
-    width: 348px;
+    width: 320px;
     height: 350px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
@@ -178,7 +178,7 @@
 .new-details {
     display: inline-flex;
     align-items: center;
-    gap: 155px;
+    gap: 120px;
     padding-top: 10px;
 }
 
@@ -213,13 +213,13 @@
 .date-reg h1 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
 }
 
 .reg-details {
     display: flex;
-    width: 340px;
+    width: 300px;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 8px;

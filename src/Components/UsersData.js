@@ -5,6 +5,7 @@ import axios from "../axios";
 import ManageUser from "./ManageUser";
 import UserActivity from "./UserActivity";
 
+
 const UsersData = () => {
   const [data, setData] = useState([]);
   const [userActivities, setUserActivities] = useState([]);

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Axios from 'axios';
 import WithdrawalModal from '../Modals/WithdrawalModal';
 import DepositModal from '../Modals/DepositModal';
-import ConfirmIdentity from '../Modals/ConfirmIdentity'
 import withdraw from '../assets/withdraw.png';
 import deposit from '../assets/deposit.png';
 import sent from '../assets/sent.png';
 import review from '../assets/review.png';
-import user from '../assets/user.png';
+import user1 from '../assets/user1.png';
 import '../Styles/RightSidebar.css';
 
 const RightSidebar = () => {
@@ -17,7 +17,7 @@ const RightSidebar = () => {
     const [selectedWithdrawal, setSelectedWithdrawal] = useState(null);
     const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
     const [selectedDeposit, setSelectedDeposit] = useState(null);
-    const [isConfirmIdentityModalOpen, setIsConfirmIdentityModalOpen] = useState(false);
+    const [newUsersData, setNewUsersData] = useState([]);
 
     useEffect(() => {
         // Fetch data from API when selectedStatus changes
@@ -58,8 +58,20 @@ const RightSidebar = () => {
         setIsDepositModalOpen(false);
     };
 
-    const handleWithdrawalApprove = () => {
-        setIsConfirmIdentityModalOpen(true);
+
+    useEffect(() => {
+        fetchNewUsersFromAPI();
+    }, []);
+
+    const fetchNewUsersFromAPI = () => {
+        Axios.get('https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/new')
+            .then((response) => {
+                const newUsers = response.data.data.data;
+                setNewUsersData(newUsers);
+            })
+            .catch((error) => {
+                console.error('Error fetching new users:', error);
+            });
     };
 
 
@@ -104,13 +116,7 @@ const RightSidebar = () => {
                         isOpen={isWithdrawalModalOpen}
                         closeModal={closeWithdrawalModal}
                         withdrawalTransaction={selectedWithdrawal}
-                        onApprove={handleWithdrawalApprove}
                     />
-
-                    <ConfirmIdentity
-                        isOpen={isConfirmIdentityModalOpen}
-                        closeModal={() => setIsConfirmIdentityModalOpen(false)}
-                    />          
 
                     <DepositModal
                         isOpen={isDepositModalOpen}
@@ -128,64 +134,24 @@ const RightSidebar = () => {
                     </div>
 
                     <div className="user-reg">
-                        <div className="date-reg">
-                            <h1>5th March 2023</h1>
-                        </div>
-
-                        <div className="reg-details">
-                            <div className="reg-detail">
-                                <div className="detail-name">Grace Mwai</div>
-                                <div className="detail-email">gracemwai444@haba.co.ke</div>
+                        {newUsersData.map((userData, index) => (
+                            <div key={index}>
+                                <div className="date-reg">
+                                    <h1>{userData.date}</h1>
+                                </div>
+                                {userData.users.map((user, userIndex) => (
+                                    <div className="reg-details" key={userIndex}>
+                                        <div className="reg-detail">
+                                            <div className="detail-name">{user.username}</div>
+                                            <div className="detail-email">{user.email}</div>
+                                        </div>
+                                        <div className="view">
+                                            <img src={user1} alt="" />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-
-                            <div className="view">
-                                <img src={user} alt="" />
-                            </div>
-                        </div>
-
-                        <div className="reg-details">
-                            <div className="reg-detail">
-                                <div className="detail-name">Bola Tinubu</div>
-                                <div className="detail-email">bolatinubu00@outlook.com</div>
-                            </div>
-
-                            <div className="view">
-                                <img src={user} alt="" />
-                            </div>
-                        </div>
-
-                        <div className="reg-details">
-                            <div className="reg-detail">
-                                <div className="detail-name">Nancy Wajacoki</div>
-                                <div className="detail-email">nancywajacoki22@yahoo.com</div>
-                            </div>
-
-                            <div className="view">
-                                <img src={user} alt="" />
-                            </div>
-                        </div>
-
-                        <div className="reg-details">
-                            <div className="reg-detail">
-                                <div className="detail-name">Peter Obi</div>
-                                <div className="detail-email">obidientpeter@state.ng</div>
-                            </div>
-
-                            <div className="view">
-                                <img src={user} alt="" />
-                            </div>
-                        </div>
-
-                        <div className="reg-details">
-                            <div className="reg-detail">
-                                <div className="detail-name">Client Mwilu</div>
-                                <div className="detail-email">clientmwilu@gmail.com</div>
-                            </div>
-
-                            <div className="view">
-                                <img src={user} alt="" />
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
