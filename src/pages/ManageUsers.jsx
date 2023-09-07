@@ -8,6 +8,7 @@ import '../Styles/ManageUsers.css';
 import filter from '../assets/filter.png';
 import forwardreview from '../assets/forwardreview.png';
 import review from '../assets/review.png';
+import UsersData from '../Components/UsersData';
 import user1 from '../assets/user1.png';
 
 const ManageUsers = () => {
@@ -200,6 +201,8 @@ const ManageUsers = () => {
                             </div>
                         </div>
 
+                        <UsersData/>
+
                         <div className="manage-numbers">
                             <img className="forward-review" src={forwardreview} alt="" />
                             <span>20 - 30 of 4,550</span>
@@ -210,7 +213,7 @@ const ManageUsers = () => {
                     </div>
                 </div>
 
-                <div className="manage-new--users">
+                <div className="manage-new-users">
                     <div className="users-reg">
                         <div className="new-details">
                             <div className="details-title">New Users</div>
