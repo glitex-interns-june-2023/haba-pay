@@ -10,7 +10,6 @@ function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });

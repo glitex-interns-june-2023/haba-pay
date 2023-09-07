@@ -8,7 +8,6 @@ import '../Styles/ManageUsers.css';
 import filter from '../assets/filter.png';
 import forwardreview from '../assets/forwardreview.png';
 import review from '../assets/review.png';
-import user from '../assets/user.png';
 import UsersData from '../Components/UsersData';
 import user1 from '../assets/user1.png';
 
