@@ -288,10 +288,11 @@
 }
 
 .manage-activity {
-  width: 672px;
+  width: 600px;
   height: 342px;
   border-radius: 5px;
   border: 0.5px solid #ded9d9;
+  margin: 270px -10px;
 }
 
 .manage-activity h1 {
@@ -336,8 +337,9 @@
   transform: translate(-50%, -50%);
 }
 
-.manage-new-users {
+.manage-new-regusers {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 20px;
 }

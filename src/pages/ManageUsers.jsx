@@ -201,8 +201,6 @@ const ManageUsers = () => {
                             </div>
                         </div>
 
-                        <UsersData/>
-
                         <div className="manage-numbers">
                             <img className="forward-review" src={forwardreview} alt="" />
                             <span>20 - 30 of 4,550</span>
@@ -210,10 +208,14 @@ const ManageUsers = () => {
                                 <path d="M2.55005 0.5L12.55 10.5L2.55005 20.5L0.775049 18.725L9.00005 10.5L0.775049 2.275L2.55005 0.5Z" fill="#898989"/>
                             </svg>
                         </div>
+
+                        <UsersData/>
+
+
                     </div>
                 </div>
 
-                <div className="manage-new-users">
+                <div className="manage-new-regusers">
                     <div className="users-reg">
                         <div className="new-details">
                             <div className="details-title">New Users</div>
