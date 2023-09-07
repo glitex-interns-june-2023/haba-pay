@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
-import '../Styles/Login.css';
-
-import axios from '../axios';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import "../Styles/Login.css";
+import Button from "../Components/Button";
+import axios from "../axios";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -18,12 +18,12 @@ function Login() {
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    setErrorMessage('');
+    setErrorMessage("");
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setErrorMessage('');
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e) => {
@@ -36,15 +36,14 @@ function Login() {
         password: password,
       });
       const data = response.data;
-      const user = data.data
+      const user = data.data;
 
-      console.log("User token",user.access_token);
+      console.log("User token", user.access_token);
 
-        setEmail('');
-        setPassword('');
+      setEmail("");
+      setPassword("");
 
-        navigate('/home');
-     
+      navigate("/home");
     } catch ({ response: { data: error } = {} }) {
       // setError(error);
       setErrorMessage(error.message);
@@ -54,7 +53,11 @@ function Login() {
   };
 
   return (
-    <div className={`login-container ${isDesktop ? 'desktop' : isTablet ? 'tablet' : 'mobile'}`}>
+    <div
+      className={`login-container ${
+        isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"
+      }`}
+    >
       <div className="title">
         <h2>HabaPay</h2>
       </div>
@@ -64,19 +67,31 @@ function Login() {
         </div>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
-          <label className={email ? 'has-content' : ''}>
+          <label className={email ? "has-content" : ""}>
             Email
-            <input type="email" id="email" value={email} onChange={handleEmailChange} />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
           </label>
           <br />
-          <label className={password ? 'has-content' : ''}>
+          <label className={password ? "has-content" : ""}>
             Password
-            <input type="password" id="password" value={password} onChange={handlePasswordChange} />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
           </label>
           <br />
-          <button className={`login-btn ${isMobile ? 'mobile-login' : ''}`} type="submit" disabled={loading}>
-            {loading ? 'Processing...' : 'Log In'}
-          </button>
+          <div className="w-100 d-flex justify-content-center mt-2">
+            <Button extended={true} disabled={loading}>
+              {loading ? "Processing..." : "Log In"}
+            </Button>
+          </div>
         </form>
 
         <Link to="/reset-password" className="forgot-pwd">
