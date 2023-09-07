@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../Styles/ResetPassword.css';
+import close from '../assets/close.png';
 
 const ResetPassword = () => {
   const [email, setEmail] = useState('');
@@ -8,6 +10,7 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [resetStatus, setResetStatus] = useState('');
   const [timer, setTimer] = useState(0);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
@@ -26,14 +29,17 @@ const ResetPassword = () => {
     setConfirmPassword(e.target.value);
   };
 
+  const handleButtonClick = () => {
+    navigate('/login');
+  };
+
   const handleSendOTP = (e) => {
     e.preventDefault();
     setResetStatus('loading');
 
-    // Replace with the correct send OTP API endpoint
-    const SEND_OTP_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/google/update-email/';
+    const RESET_PASSWORD_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/v1/auth/reset-password';
 
-    fetch(SEND_OTP_API_ENDPOINT, {
+    fetch(RESET_PASSWORD_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,42 +55,13 @@ const ResetPassword = () => {
           setTimer(30);
         } else {
           setResetStatus('error');
+          setErrorMessage(data.message || 'An error occurred. Please try again.');
         }
       })
       .catch((error) => {
         console.error('Error:', error);
         setResetStatus('error');
-      });
-  };
-
-  const handleVerifyOTP = (e) => {
-    e.preventDefault();
-    setResetStatus('loading');
-
-    // Replace with the correct verify OTP API endpoint
-    const VERIFY_OTP_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/google/verify-otp/';
-
-    fetch(VERIFY_OTP_API_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        otp,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          setResetStatus('otpVerified');
-        } else {
-          setResetStatus('error');
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setResetStatus('error');
+        setErrorMessage('An error occurred. Please try again.');
       });
   };
 
@@ -92,13 +69,9 @@ const ResetPassword = () => {
     e.preventDefault();
     setResetStatus('loading');
 
-    // Replace with the correct confirm password reset API endpoint
-    const CONFIRM_PASSWORD_RESET_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/admins/password-reset/uid/token/';
+    const RESET_PASSWORD_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/v1/auth/reset-password';
 
-    // Replace with the correct password reset API endpoint
-    const PASSWORD_RESET_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/admins/password-reset/';
-
-    fetch(CONFIRM_PASSWORD_RESET_API_ENDPOINT, {
+    fetch(RESET_PASSWORD_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -106,25 +79,9 @@ const ResetPassword = () => {
       body: JSON.stringify({
         email,
         otp,
+        newPassword,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          return fetch(PASSWORD_RESET_API_ENDPOINT, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email,
-              newPassword,
-            }),
-          });
-        } else {
-          setResetStatus('error');
-        }
-      })
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -132,21 +89,22 @@ const ResetPassword = () => {
           navigate('/login');
         } else {
           setResetStatus('error');
+          setErrorMessage(data.message || 'An error occurred. Please try again.');
         }
       })
       .catch((error) => {
         console.error('Error:', error);
         setResetStatus('error');
+        setErrorMessage('An error occurred. Please try again.');
       });
   };
 
   const handleResendOTP = () => {
     setResetStatus('loading');
 
-    // Reuse the send OTP API endpoint for resending OTP
-    const RESEND_OTP_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/google/update-email/';
+    const RESET_PASSWORD_API_ENDPOINT = 'https://habaapi.glitexsolutions.co.ke/api/v1/auth/reset-password';
 
-    fetch(RESEND_OTP_API_ENDPOINT, {
+    fetch(RESET_PASSWORD_API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -162,11 +120,13 @@ const ResetPassword = () => {
           setTimer(30);
         } else {
           setResetStatus('error');
+          setErrorMessage(data.message || 'An error occurred. Please try again.');
         }
       })
       .catch((error) => {
         console.error('Error:', error);
         setResetStatus('error');
+        setErrorMessage('An error occurred. Please try again.');
       });
   };
 
@@ -184,12 +144,20 @@ const ResetPassword = () => {
 
   return (
     <div className="reset-pwd">
-      <h2>Reset Password</h2>
+      <div className="close-btn-container">
+        <div className="close-btn" onClick={handleButtonClick}>
+          <img src={close} alt="close" />
+        </div>
+      </div>
+
+      <div className="reset-pwd-header">
+        <h2>Reset Password</h2>
+      </div>
       {resetStatus === 'success' ? (
         <div>
           <p>Password reset successful.</p>
           <button type="button" onClick={() => navigate('/login')}>
-            Go to Login
+            Login
           </button>
         </div>
       ) : (
@@ -197,19 +165,18 @@ const ResetPassword = () => {
           {resetStatus === 'otpSent' ? (
             <div>
               <p>An OTP has been sent to your email. Please enter it below.</p>
-              <form onSubmit={handleVerifyOTP}>
-                <label htmlFor="otp">OTP Code</label>
-                <input
-                  type="text"
-                  id="otp"
-                  value={otp}
-                  onChange={handleOtpChange}
-                />
-                <br />
-                {resetStatus === 'loading' && <p>Loading...</p>}
-                {resetStatus === 'error' && (
-                  <p>Error verifying OTP. Please try again.</p>
-                )}
+              <form onSubmit={handleResetPassword}>
+                <div className="form-group">
+                  {resetStatus === 'loading' && <p>Loading...</p>}
+                  {resetStatus === 'error' && <p>{errorMessage}</p>}
+                  <label htmlFor="otp">OTP Code</label>
+                  <input
+                    type="text"
+                    id="otp"
+                    value={otp}
+                    onChange={handleOtpChange}
+                  />
+                </div>
                 <button type="submit">Verify OTP</button>
               </form>
               {timer === 0 && (
@@ -223,26 +190,26 @@ const ResetPassword = () => {
             <div>
               <p>OTP verified. Enter your new password to reset.</p>
               <form onSubmit={handleResetPassword}>
-                <label htmlFor="newPassword">New Password</label>
-                <input
-                  type="password"
-                  id="newPassword"
-                  value={newPassword}
-                  onChange={handleNewPasswordChange}
-                />
-                <br />
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  value={confirmPassword}
-                  onChange={handleConfirmPasswordChange}
-                />
-                <br />
-                {resetStatus === 'loading' && <p>Loading...</p>}
-                {resetStatus === 'error' && (
-                  <p>Error resetting password. Please try again.</p>
-                )}
+                <div className="form-group">
+                  {resetStatus === 'loading' && <p>Loading...</p>}
+                  {resetStatus === 'error' && <p>{errorMessage}</p>}
+                  <label htmlFor="newPassword">New Password</label>
+                  <input
+                    type="password"
+                    id="newPassword"
+                    value={newPassword}
+                    onChange={handleNewPasswordChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="confirmPassword">Confirm Password</label>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    value={confirmPassword}
+                    onChange={handleConfirmPasswordChange}
+                  />
+                </div>
                 <button type="submit">Reset Password</button>
               </form>
             </div>
@@ -250,18 +217,17 @@ const ResetPassword = () => {
             <div className="send-otp">
               <p>Enter your email to receive an OTP to reset your password.</p>
               <form onSubmit={handleSendOTP}>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                />
-                <br />
-                {resetStatus === 'loading' && <p>Loading...</p>}
-                {resetStatus === 'error' && (
-                  <p>Error generating OTP. Please try again.</p>
-                )}
+                <div className="form-group">
+                  {resetStatus === 'loading' && <p>Loading...</p>}
+                  {resetStatus === 'error' && <p>{errorMessage}</p>}
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                  />
+                </div>
                 <button type="submit">Send OTP</button>
               </form>
             </div>
