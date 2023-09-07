@@ -1,0 +1,25 @@
+.m-btn {
+  display: flex;
+  padding: 7px 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: 1px solid #fdac15;
+  background: transparent;
+  color: #fdac15;
+  font-family: IBM Plex Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.active {
+  background: #fdac15;
+  color: #fffefd;
+}
+
+.extended {
+  width: 240px;
+  padding: 10px;
+}
