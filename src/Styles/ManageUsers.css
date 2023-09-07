@@ -1,13 +1,7 @@
 .manage-container {
-<<<<<<< HEAD
-    display: flex;
-    min-height: 100vh;
-    overflow: hidden;
-=======
   display: flex;
   min-height: 100vh;
   overflow-x: hidden;
->>>>>>> 2c2c18aac105acbad825e719cdaebadbbee0b06b
 }
 
 .LeftSidebar {
