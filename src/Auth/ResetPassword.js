@@ -185,7 +185,7 @@ const ResetPassword = () => {
 
   return (
     <div className="reset-pwd">
-      <h2>Reset Password</h2>
+      <h2 className="d-flex justify-content-center mt-2">Reset Password</h2>
       {resetStatus === "success" ? (
         <div>
           <p>Password reset successful.</p>
@@ -248,10 +248,10 @@ const ResetPassword = () => {
               </form>
             </div>
           ) : (
-            <div className="send-otp">
+            <div className="send-otp d-flex justify-content-center align-items-center mt-5 flex-column">
               <p>Enter your email to receive an OTP to reset your password.</p>
               <form onSubmit={handleSendOTP}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="m-3">Email</label>
                 <input
                   type="text"
                   id="email"
