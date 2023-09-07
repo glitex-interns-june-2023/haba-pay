@@ -7,6 +7,8 @@ import close from '../assets/close.png';
 function VerifyEmail({ primaryNumber }) {
   const navigate = useNavigate();
   const [pin, setPin] = useState('');
+  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleButtonClick = () => {
     navigate('/abort');
@@ -16,8 +18,13 @@ function VerifyEmail({ primaryNumber }) {
     setPin(event.target.value);
   };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+
   const handleVerifyClick = () => {
     const verificationData = {
+      email: email,
       pin,
     };
 
@@ -33,13 +40,18 @@ function VerifyEmail({ primaryNumber }) {
             console.log('OTP Sent to Primary Number:', otpResponse.data);
             navigate('/verify-number');
           })
-          .catch((otpError) => {
-            console.error('Error sending OTP:', otpError);
-          });
+          .catch((error) => {
+            const { response: { data } = {} } = error;
+            // setError(data); // If you want to handle the error here
+            setErrorMessage(data.message);
+          })
       })
       .catch((error) => {
-        console.error('Error verifying email pin:', error);
-      });
+        const { response: { data } = {} } = error;
+        // setError(data); // If you want to handle the error here
+        setErrorMessage(data.message);
+      })
+      
   };
 
   return (
@@ -50,6 +62,8 @@ function VerifyEmail({ primaryNumber }) {
         </div>
       </div>
 
+      <div className="error-message">{errorMessage}</div>
+
       <div className="verify-email-header">
         <h1>Verify Email</h1>
         <p>A verification PIN was sent to the email account you entered</p>
@@ -57,6 +71,9 @@ function VerifyEmail({ primaryNumber }) {
 
       <label htmlFor="pin">Verification Pin</label>
       <input type="text" id="pin" value={pin} onChange={handlePinChange} />
+
+      <label htmlFor="email">Email</label>
+      <input type="text" id="email" value={email} onChange={handleEmailChange} />
 
       <button onClick={handleVerifyClick}>Verify</button>
     </div>
