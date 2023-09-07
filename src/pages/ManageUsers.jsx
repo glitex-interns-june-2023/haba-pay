@@ -52,7 +52,7 @@ const ManageUsers = () => {
 
     const handleDeleteUser = async (id) => {
         try {
-            await axios.delete(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/${id}`);
+            await axios.delete(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/{id}`);
         } catch (error) {
             console.error('Error deleting user:', error);
         }
@@ -60,7 +60,7 @@ const ManageUsers = () => {
 
     const handleSuspendUser = async (id) => {
         try {
-            await axios.post(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/${id}/suspend`); 
+            await axios.post(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/{id}/suspend`); 
             const updatedSuspendedUsers = suspendedUsers.filter((user) => user.id !== id);
             setSuspendedUsers(updatedSuspendedUsers);
         } catch (error) {
@@ -70,7 +70,7 @@ const ManageUsers = () => {
 
     const handleRestoreUser = async (id) => {
         try {
-            await axios.post(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/${id}/unsuspend`); 
+            await axios.post(`https://habaapi.glitexsolutions.co.ke/api/v1/admins/users/{id}/unsuspend`); 
             const updatedSuspendedUsers = suspendedUsers.filter((user) => user.id !== id);
             setSuspendedUsers(updatedSuspendedUsers);
         } catch (error) {
@@ -209,7 +209,6 @@ const ManageUsers = () => {
                         </div>
                     </div>
                 </div>
-                    
 
                 <div className="manage-new--users">
                     <div className="users-reg">

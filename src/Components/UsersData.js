@@ -1,5 +1,6 @@
 import React from 'react';
 import activity from '../assets/activity.png';
+import manage from '../assets/manage.png';
 
 
 const UsersData = () => {
