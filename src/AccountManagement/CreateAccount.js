@@ -16,6 +16,7 @@ const CreateAccount = () => {
   const [loginPin, setLoginPin] = useState('');
 
   const [validationErrors, setValidationErrors] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleCancel = () => {
     history('/abort');
@@ -92,8 +93,10 @@ const CreateAccount = () => {
           });
       })
       .catch((error) => {
-        console.error('Error registering admin:', error);
-      });
+        const { response: { data } = {} } = error;
+        // setError(data); // If you want to handle the error here
+        setErrorMessage(data.message);
+      })
   };
 
 
@@ -111,6 +114,7 @@ const CreateAccount = () => {
           <h1>Create Admin Account</h1>
           <p>Enter account details for the new admin account</p>
         </div>
+        <div className="error-message">{errorMessage}</div>
         <div className="create-account-details">
           <div className="create-account-detail">
             <label>Name</label>
