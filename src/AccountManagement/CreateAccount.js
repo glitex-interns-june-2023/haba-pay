@@ -94,7 +94,6 @@ const CreateAccount = () => {
       })
       .catch((error) => {
         const { response: { data } = {} } = error;
-        // setError(data); // If you want to handle the error here
         setErrorMessage(data.message);
       })
   };
