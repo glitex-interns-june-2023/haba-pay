@@ -1,6 +1,7 @@
 .analytics-container {
     display: flex;
     min-height: 100vh;
+    overflow: hidden;
 }
   
 .LeftSidebar {
@@ -15,11 +16,11 @@
 .analytics-statistics {
     display: flex;
     flex-direction: row;
-    margin: 120px 40px;
+    margin: 120px 20px;
 }
 
 .analytic-statistic {
-    width: 672px;
+    width: 632px;
     height: 574px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
@@ -28,12 +29,12 @@
 .weekly-analytics {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 15px;
 }
 
 .weekly-analytic {
-    width: 210px;
-    height: 136px;
+    width: 200px;
+    height: 130px;
     padding-left: 8px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
@@ -43,7 +44,7 @@
 .weekly-analytic h2 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     margin-top: 4px;
 }
@@ -51,7 +52,7 @@
 .weekly-analytic h3 {
     color: #323232;
     font-family: IBM Plex Sans;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     margin-top: 2px;
 }
@@ -60,17 +61,18 @@
     display: inline-flex;
     flex-direction: row;
     padding: 5px 10px;
-    margin-top: -1.5px;
-    align-items: flex-start;
+    margin-top: 2px;
+    align-items: center;
     gap: 10px;
     border-radius: 5px;
     background: #FFFEFD;
 }
 
+
 .analytics-adoption {
     display: flex;
     flex-direction: row;
-    gap: 380px;
+    gap: 345px;
 }
 
 .adoption-title h2 {
@@ -78,12 +80,12 @@
     font-family: IBM Plex Sans;
     font-size: 22px;
     font-weight: 600;
-    padding-left: 10px;
+    padding: 10px 10px;
 }
 
 .adoption-filter {
-    height: 25px;
-    width: 75px;
+    height: 35px;
+    width: 95px;
     display: inline-flex;
     padding: 4px 10px;
     margin-top: 15px;
@@ -98,22 +100,23 @@
     font-family: IBM Plex Sans;
     font-size: 18px;
     font-weight: 400;
+    padding-top:5px;
 }
 
 .adoption-filter span svg {
     width: 24px;
     height: 24px;
-    padding-top: 5px;
 }
 
 .adoption-chart {
-    padding-left: 15px;
+    padding-top: 10px;
+    margin-left: -5px;
 }
 
 .region-analytics {
     width: 370px;
     height: 574px;
-    margin-left: 30px;
+    margin-left: 25px;
     border-radius: 5px;
     border: 0.5px solid #DED9D9;
 }
@@ -123,7 +126,7 @@
     font-family: IBM Plex Sans;
     font-size: 22px;
     font-weight: 600;
-    padding-left: 10px;
+    padding: 10px 10px;
 }
 
 .region-stats {
@@ -185,7 +188,7 @@
 
 .county-content {
     position: relative;
-    top: -465px;
+    top: -445px;
     left: 88px;
     cursor: pointer;
 }
@@ -201,7 +204,7 @@
     width: 140px;
     height: 0.5px;
     background: #DED9D9;
-    margin-top: -13px;
+    margin-top: -10px;
 }
 
 .county-stats {
@@ -216,7 +219,7 @@
     font-family: IBM Plex Sans;
     font-size: 16px;
     font-weight: 700;
-    margin-top: -1px;
+    padding-top: 3px;
 }
 
 .county-users p,
@@ -225,14 +228,14 @@
     font-family: IBM Plex Sans;
     font-size: 14px;
     font-weight: 400;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .number-stats {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: -350px -30px;
+    margin: -325px -30px;
 }
 
 .number-stats div {
@@ -255,12 +258,12 @@
 }
 
 .nationalusers-stats {
-    padding-top: 370px;
+    padding-top: 380px;
 }
 
-.total-nationalreach {
+.nationalusers-stats .total-nationalreach {
     gap: 10px;
-    margin: -10px -70px;
+    margin: -30px -70px;
     padding-left: 30px;
 }
 
@@ -282,21 +285,20 @@
 }
 
 .total-nationalusers {
-    margin: -60px 200px;
+    margin: -48px 200px;
 }
 
 .analytics-recentactivities {
-    width: 1091px;
+    width: 1025px;
     height: 487px;
     border-radius: 5px;
-    margin: -110px 40px;
+    margin: -110px 20px;
     border: 0.5px solid #DED9D9;
 }
 
 .recentactivities-header {
     display: inline-flex;
-    margin-top: -8px;
-    gap: 800px;
+    gap: 720px;
 }
 
 .recentactivities-title h2 {
@@ -304,16 +306,16 @@
     font-family: IBM Plex Sans;
     font-size: 22px;
     font-weight: 600;
-    padding-left: 5px;
+    padding: 10px 10px;
 }
 
 .recentactivities-filter {
-    height: 25px;
-    width: 75px;
+    height: 35px;
+    width: 95px;
     display: inline-flex;
     padding: 4px 10px;
     margin-top: 15px;
-    align-items: center;
+    margin-right: 20px;
     gap: 10px;
     border-radius: 5px;
     border: 1px solid #FDAC15;
@@ -330,13 +332,14 @@
     width: 24px;
     height: 24px;
     padding-left: 5px;
+    margin-top: -5px;
 }
 
 .useranalytics-content {
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
-    margin-top: -28px;
+    padding-left: 30px;
+    margin-top: 20px;
 }
 
 .useractivity-name,
@@ -374,7 +377,7 @@
 .useractivitytransaction-title span svg,
 .useractivitylaunch-title span svg,
 .useractivitystatus-title span svg {
-    padding-top: 8px;
+    margin-top: -10px;
     padding-left: 5px;
 }
 
