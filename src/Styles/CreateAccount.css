@@ -112,3 +112,14 @@
     font-weight: 600;
     color: #FFFEFD;
 }
+
+.error-input {
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    padding-left: 5px;
+}
+
+::placeholder {
+    color: #FDAC15;
+}
