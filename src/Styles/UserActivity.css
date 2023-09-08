@@ -1,0 +1,24 @@
+.transaction-activity .activity {
+    margin-top: -10px;
+}
+
+.message {
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+}
+
+.time {
+    color: #323232;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.review-btn {
+    color: #898989;
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 400;
+    padding-right: 55px;
+    margin-top: -10px;
+}

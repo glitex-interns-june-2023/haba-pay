@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import manage from "../assets/manage.png";
 
 const ManageUser = ({ user, onCheckboxChange }) => {
@@ -17,7 +19,9 @@ const ManageUser = ({ user, onCheckboxChange }) => {
       </td>
       <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{user.status}</td>
       <td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src={manage} alt="" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/user-profile">
+          <img src={manage} alt="Manage" />
+        </Link>
       </td>
     </tr>
   );

@@ -16,7 +16,7 @@ import HabaChart from './Components/HabaChart';
 import Analytics from './pages/Analytics';
 import ManageUsers from './pages/ManageUsers';
 import Settings from './pages/Settings';
-import AdminProfile from './pages/AdminProfile';
+import UserProfile from './pages/UserProfile';
 import WithdrawalModal from './Modals/WithdrawalModal';
 import DepositModal from './Modals/DepositModal';
 import ConfirmIdentity from './Modals/ConfirmIdentity';
@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/manage-users" element={<ManageUsers />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/admin-profile" element={<AdminProfile />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/withdrawal" element={<WithdrawalModal />} />
         <Route path="/deposit" element={<DepositModal />} />
         <Route path="/confirm-identity" element={<ConfirmIdentity />} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Styles/AdminProfile.css';
+import '../Styles/UserProfile.css';
 import LeftSidebar from '../Components/LeftSidebar';
 import Navbar from '../Components/Navbar';
 import HabaChart from '../Components/HabaChart';
@@ -10,7 +10,7 @@ import ellipse from '../assets/ellipse.png';
 import union from '../assets/union.png';
 import review from '../assets/review.png';
 
-const AdminProfile = () => {
+const UserProfile = () => {
     const [isEditModalOpen, setEditModalOpen] = useState(false);
     const [isSuspendModalOpen, setSuspendModalOpen] = useState(false);
     const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -331,4 +331,4 @@ const AdminProfile = () => {
     );
 };
 
-export default AdminProfile;
+export default UserProfile;
