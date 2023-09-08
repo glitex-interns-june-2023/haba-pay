@@ -3,6 +3,7 @@
 }
 
 .title h2 {
+    position: fixed;
     margin: 20px 50px;
     font-weight: 500;
     font-size: 32px;

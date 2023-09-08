@@ -51,18 +51,18 @@ const UsersData = () => {
 
   return (
     <div style={{ position: "absolute", top: "30%", left: "23%" }}>
-      <table className="table">
+      <table className="table" style={{ marginTop: '10px' }}>
         <thead>
-          <tr>
+          <tr style={{fontSize: '18px', fontFamily: 'IBM Plex Sans', fontWeight: '600'}}>
             <th scope="col">
-              <input type="checkbox" />
+            &nbsp;&nbsp;<input type="checkbox" />
             </th>
-            <th scope="col">Name</th>
-            <th scope="col">Number</th>
-            <th scope="col">Email</th>
-            <th scope="col">Balance</th>
-            <th scope="col">Status</th>
-            <th scope="col">Manage</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;Name</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Balance</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status</th>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage</th>
           </tr>
         </thead>
         <tbody>
